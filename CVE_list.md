@@ -1,6 +1,8 @@
+CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF5)
+
 | Issue # | Description |
 |---------|-------------|
-|CVE-2022-26061|A heap-based buffer overflow vulnerability exists in the gif2h5 functionality of HDF5 Group libhdf5 1.10.4. A specially-crafted GIF file can lead to code execution. An attacker can provide a malicious file to trigger this vulnerability.|
+|[CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)|A heap-based buffer overflow vulnerability exists in the gif2h5 functionality of HDF5 Group libhdf5 1.10.4. A specially-crafted GIF file can lead to code execution. An attacker can provide a malicious file to trigger this vulnerability.|
 |CVE-2022-25972|An out-of-bounds write vulnerability exists in the gif2h5 functionality of HDF5 Group libhdf5 1.10.4. A specially-crafted GIF file can lead to code execution. An attacker can provide a malicious file to trigger this vulnerability.|
 |CVE-2022-25942|An out-of-bounds read vulnerability exists in the gif2h5 functionality of HDF5 Group libhdf5 1.10.4. A specially-crafted GIF file can lead to code execution. An attacker can provide a malicious file to trigger this vulnerability.|
 |CVE-2021-46244|A Divide By Zero vulnerability exists in HDF5 v1.13.1-1 vis the function H5T__complete_copy () at /hdf5/src/H5T.c. This vulnerability causes an aritmetic exception, leading to a Denial of Service (DoS).|
