@@ -1,6 +1,6 @@
 CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF5)
 
-| Issue # | Description |
+| CVE_Issue_Number | Description |
 |---------|-------------|
 |[CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)|A heap-based buffer overflow vulnerability exists in the gif2h5 functionality of HDF5 Group libhdf5 1.10.4. A specially-crafted GIF file can lead to code execution. An attacker can provide a malicious file to trigger this vulnerability.|
 |[CVE-2022-25972](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25972)|An out-of-bounds write vulnerability exists in the gif2h5 functionality of HDF5 Group libhdf5 1.10.4. A specially-crafted GIF file can lead to code execution. An attacker can provide a malicious file to trigger this vulnerability.|
