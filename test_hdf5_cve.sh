@@ -16,8 +16,8 @@
 echo "Testing HDF5 against known CVE issues"
 echo ""
 
+# I'm using cve_hdf5 currently
 #
-# this is currently cve_hdf5
 srcdir=`pwd`
 testdir=$srcdir/testfiles
 bindir=/scr/bmribler
@@ -27,8 +27,8 @@ EXIT_SUCCESS=0
 EXIT_FAILURE=1
 nerrors=0
 
-#
-# temporary executables (what I happen to have around)
+# temporary executables (what I happen to have around),
+# need to know how we do with the different branches
 #
 DUMPER1_14=/mnt/hdf/bmribler/H5lib/jelly-1140/bin/h5dump
 DUMPER1_12=/scr/bmribler/build_hdf5-1_12_0/built/bin/h5dump
@@ -79,8 +79,7 @@ $SRC_CVE_TESTFILES/cve-2021-46243.h5
 $SRC_CVE_TESTFILES/cve-2021-46244.h5
 "
 
-# Print a line-line message left justified in a field of 70 characters
-# beginning with the word "Testing".
+# Print a line beginning with the word "Testing".
 #
 TESTING() {
    echo "Testing $* "
@@ -88,7 +87,7 @@ TESTING() {
 
 DUMPER_ACTUAL=$testdir/dumper_out
 
-# same as TOOLTEST1 but expects h5dump to fail
+# run h5dump on a CVE file and check for various types of crashes
 #
 DUMP_CVEFILE() {
 
@@ -96,7 +95,7 @@ DUMP_CVEFILE() {
     actual="$DUMPER_ACTUAL/`basename $1 .exp`.out"
     echo ""
 
-    # Run test.
+    # Run test
     TESTING $TESTNAME $infile
     (
         $DUMPER1_10 "$@" $infile
@@ -106,24 +105,23 @@ DUMP_CVEFILE() {
     if [ $RET == 139 ] ; then
         nerrors="`expr $nerrors + 1`"
         echo "*FAILED - test on $infile produced Segmentation fault (core dumped)"
+    # Floating point exception
     elif [ $RET == 136 ] ; then
         nerrors="`expr $nerrors + 1`"
         echo "*FAILED - test on $infile produced Floating point exception(core dumped)"
+    # Aborted
     elif [ $RET == 134 ] ; then
         nerrors="`expr $nerrors + 1`"
         echo "*FAILED - test on $infile got Aborted (core dumped)"
     else
         echo " PASSED"
     fi
-
 }
 
-#
 # create directory to store actual output
 #
 mkdir -p -m=777 $DUMPER_ACTUAL
 
-#
 # run h5dump on each CVE file
 #
 for testfile in $LIST_CVEHDF5_TEST_FILES
@@ -131,12 +129,12 @@ do
     DUMP_CVEFILE $testfile
 done
 
-#
 # cleanup actual output
 #
 echo "*** not cleanup the output files at this time, they should be inspected ***"
 
 # Report test results and exit
+#
 if test $nerrors -eq 0 ; then
     echo "All $TESTNAME tests passed."
     exit $EXIT_SUCCESS
