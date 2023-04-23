@@ -1,0 +1,490 @@
+Testing HDF5 against known CVE issues
+
+
+===================================================================
+                      Testing in 1.10
+===================================================================
+
+Dumping file ../testfiles/cve-2017-17505.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17506.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17507.h5 
+*FAILED - Segmentation fault (core dumped)
+
+Dumping file ../testfiles/cve-2017-17508.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17509.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11202.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-11203.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11204.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11205.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-11206-new.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11206-old.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-13873.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-15672.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17233.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17234.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17433.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17434.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17435.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17436.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17437.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17438.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17439.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8396.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8397.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8398.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-9151.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-9152.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2020-10809.h5 
+ PASSED
+
+Dumping file ../testfiles/cve_2020_10810.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10810.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10811.h5 
+ PASSED
+
+Dumping file ../testfiles/cve_2020_10812.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10812.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45829.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45830.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45833.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2021-46242.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2021-46243.h5 
+*FAILED - Segmentation fault (core dumped)
+
+Dumping file ../testfiles/cve-2021-46244.h5 
+*FAILED - Floating point exception(core dumped)
+
+===================================================================
+                      Testing in 1.12
+===================================================================
+
+Dumping file ../testfiles/cve-2017-17505.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17506.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17507.h5 
+*FAILED - Segmentation fault (core dumped)
+
+Dumping file ../testfiles/cve-2017-17508.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17509.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11202.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-11203.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-11204.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11205.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-11206-new.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11206-old.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-13873.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-15672.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-17233.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17234.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17433.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17434.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17435.h5 
+*FAILED - Segmentation fault (core dumped)
+
+Dumping file ../testfiles/cve-2018-17436.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17437.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17438.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17439.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8396.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8397.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8398.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-9151.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-9152.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2020-10809.h5 
+ PASSED
+
+Dumping file ../testfiles/cve_2020_10810.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10810.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10811.h5 
+*FAILED - Segmentation fault (core dumped)
+
+Dumping file ../testfiles/cve_2020_10812.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2020-10812.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2021-45829.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45830.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45833.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2021-46242.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2021-46243.h5 
+*FAILED - Segmentation fault (core dumped)
+
+Dumping file ../testfiles/cve-2021-46244.h5 
+*FAILED - Floating point exception(core dumped)
+
+===================================================================
+                      Testing in 1.14
+===================================================================
+
+Dumping file ../testfiles/cve-2017-17505.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17506.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17507.h5 
+*FAILED - Segmentation fault (core dumped)
+
+Dumping file ../testfiles/cve-2017-17508.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17509.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11202.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-11203.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11204.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11205.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-11206-new.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11206-old.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-13873.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-15672.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17233.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17234.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17433.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17434.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17435.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17436.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17437.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17438.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17439.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8396.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8397.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8398.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-9151.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-9152.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10809.h5 
+ PASSED
+
+Dumping file ../testfiles/cve_2020_10810.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10810.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10811.h5 
+ PASSED
+
+Dumping file ../testfiles/cve_2020_10812.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10812.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45829.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45830.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45833.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-46242.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-46243.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-46244.h5 
+ PASSED
+
+===================================================================
+                      Testing in 1.15
+===================================================================
+
+Dumping file ../testfiles/cve-2017-17505.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17506.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17507.h5 
+*FAILED - Segmentation fault (core dumped)
+
+Dumping file ../testfiles/cve-2017-17508.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2017-17509.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11202.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-11203.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11204.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11205.h5 
+*FAILED - Aborted (core dumped)
+
+Dumping file ../testfiles/cve-2018-11206-new.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-11206-old.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-13873.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-15672.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17233.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17234.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17433.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17434.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17435.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17436.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17437.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17438.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2018-17439.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8396.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8397.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-8398.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-9151.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2019-9152.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10809.h5 
+ PASSED
+
+Dumping file ../testfiles/cve_2020_10810.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10810.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10811.h5 
+ PASSED
+
+Dumping file ../testfiles/cve_2020_10812.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2020-10812.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45829.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45830.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-45833.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-46242.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-46243.h5 
+ PASSED
+
+Dumping file ../testfiles/cve-2021-46244.h5 
+ PASSED
+
+*** not cleanup the output files at this time, they should be inspected ***
+
+h5dump tests failed with 28 errors.
