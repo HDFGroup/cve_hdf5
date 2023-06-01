@@ -78,40 +78,43 @@ cve-2021-46244.h5
 
 # Problematic files that cannot be tested. For example, they might generate an
 # infinite loop.
-CVE_BAD_FILES="
-cve-2018-15671.h5
-"
+#CVE_BAD_FILES="
+#cve-2018-15671.h5
+#"
 
 # Run user-provided h5dump on a given CVE file and report PASSED or FAILED
 TEST_CVEFILE() {
 
     infile=$1
-    base="`basename $1 .exp`"
+    base=$(basename "$1" .exp)
 
     echo -ne "$base\t\t\t"
 
     # Store actual output in a file for inspection and reducing clutter on screen
     outfile="$base.out"
 
-    # Run test
-    $H5DUMP $infile > "$outdir/$outfile" 2>&1
+    # Run test, redirecting stderr and stdout to the output file
+    #
+    # NOTE: An abort will cause bash to emit a bunch of text that will NOT
+    #       be sent to the file, but will unilaterally be dumped.
+    $H5DUMP "$infile" > "$outdir/$outfile" 2>&1
 
     RET=$?
 
     # A test passes when it invokes normal HDF5 error handling.
     if [[ $RET == 139 ]] ; then
-        nerrors="`expr $nerrors + 1`"
+        nerrors=$(( nerrors + 1 ))
         echo "*FAILED - Segmentation fault"
     elif [[ $RET == 136 ]] ; then
-        nerrors="`expr $nerrors + 1`"
+        nerrors=$(( nerrors + 1 ))
         echo "*FAILED - Floating point exception"
     elif [[ $RET == 134 ]] ; then
-        nerrors="`expr $nerrors + 1`"
+        nerrors=$(( nerrors + 1 ))
         echo "*FAILED - Aborted"
     elif [[ $RET == 0 || $RET == 1 ]] ; then
         echo " PASSED"
     else
-        nerrors="`expr $nerrors + 1`"
+        nerrors=$(( nerrors + 1 ))
         echo "***FAILED*** - Unexpected error: $RET"
     fi
 }
@@ -119,7 +122,7 @@ TEST_CVEFILE() {
 # Run h5dump on each CVE file
 for testfile in $CVE_TEST_FILES
 do
-    TEST_CVEFILE $CVE_H5_FILES_DIR/$testfile
+    TEST_CVEFILE "$CVE_H5_FILES_DIR/$testfile"
 done
 
 # Clean up actual output
@@ -128,7 +131,7 @@ echo "*** Do not cleanup the output files, they should be inspected ***"
 echo ""
 
 # Report test results and exit
-if test $nerrors -eq 0 ; then
+if test "$nerrors" -eq 0 ; then
     echo "All tests passed."
     exit $EXIT_SUCCESS
 else
