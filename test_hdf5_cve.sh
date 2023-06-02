@@ -16,6 +16,29 @@
 echo ""
 echo "Testing HDF5 against known CVE issues"
 echo "====================================="
+echo ""
+echo "Tests HDF5 CVE issues via the command-line tools. Most HDF5 CVE issues"
+echo "are due to incorrect behavior when parsing corrupt files. This test"
+echo "script opens the CVE demonstration files using the HDF command-line"
+echo "tools to ensure that the library the tools are linked to behaves"
+echo "correctly when parsing these files."
+echo ""
+echo "A PASSED test indicates that the tool exited normally (no segfaults,"
+echo "etc.) and emitted a success/fail return value."
+echo ""
+echo "USAGE:"
+echo ""
+echo "      ./test_hdf5_cve.sh <path/to/tools> <output_dir>"
+echo ""
+echo "      path/to/tools is the path to where the command-line tools"
+echo "      (e.g., h5dump) can be found. It can be relative or absolute."
+echo ""
+echo "      output_dir is where you would like to put the stderr/stdout"
+echo "      output from each test."
+echo ""
+echo "The script returns 0 on success and 1 on failure so it can be used"
+echo "in CI actions."
+echo ""
 
 EXIT_SUCCESS=0
 EXIT_FAILURE=1
@@ -47,6 +70,7 @@ cve-2018-11205.h5
 cve-2018-11206-new.h5
 cve-2018-11206-old.h5
 cve-2018-13873.h5
+cve-2018-15671.h5
 cve-2018-15672.h5
 cve-2018-17233.h5
 cve-2018-17234.h5
@@ -76,12 +100,6 @@ cve-2021-46243.h5
 cve-2021-46244.h5
 "
 
-# Problematic files that cannot be tested. For example, they might generate an
-# infinite loop.
-#CVE_BAD_FILES="
-#cve-2018-15671.h5
-#"
-
 # Run user-provided h5dump on a given CVE file and report PASSED or FAILED
 TEST_CVEFILE() {
 
@@ -94,30 +112,50 @@ TEST_CVEFILE() {
     outfile="$base.out"
 
     # Run test, redirecting stderr and stdout to the output file
-    #
-    # NOTE: An abort will cause bash to emit a bunch of text that will NOT
-    #       be sent to the file, but will unilaterally be dumped.
-    $H5DUMP "$infile" > "$outdir/$outfile" 2>&1
+    (
+        # Run using timeout to detect infinite loops.
+        # Timeout returns 124 when the timeout has been exceeded.
+        timeout 10 $H5DUMP "$infile"
+
+        RET=$?
+
+        # An abort (exit code 134) will cause bash to emit a bunch of noise.
+        # Instead, we change the exit code to something the command line
+        # tools don't use.
+        if [[ $RET == 134 ]] ; then
+            exit 57
+        else
+            exit $RET
+        fi
+
+    ) > "$outdir/$outfile" 2>&1
 
     RET=$?
 
     # A test passes when it invokes normal HDF5 error handling.
     if [[ $RET == 139 ]] ; then
         nerrors=$(( nerrors + 1 ))
-        echo "*FAILED - Segmentation fault"
+        echo "***FAILED*** (Segmentation fault)"
     elif [[ $RET == 136 ]] ; then
         nerrors=$(( nerrors + 1 ))
-        echo "*FAILED - Floating point exception"
-    elif [[ $RET == 134 ]] ; then
+        echo "***FAILED*** (Floating point exception)"
+    elif [[ $RET == 124 ]] ; then
         nerrors=$(( nerrors + 1 ))
-        echo "*FAILED - Aborted"
+        echo "***FAILED*** (Probable infinite loop)"
+    elif [[ $RET == 57 ]] ; then
+        nerrors=$(( nerrors + 1 ))
+        echo "***FAILED*** (Abort)"
     elif [[ $RET == 0 || $RET == 1 ]] ; then
-        echo " PASSED"
+        echo "PASSED"
     else
         nerrors=$(( nerrors + 1 ))
-        echo "***FAILED*** - Unexpected error: $RET"
+        echo "***FAILED*** (Unexpected error: $RET)"
     fi
 }
+
+# Show the HDF5 version
+$H5DUMP -V
+echo ""
 
 # Run h5dump on each CVE file
 for testfile in $CVE_TEST_FILES
@@ -125,12 +163,8 @@ do
     TEST_CVEFILE "$CVE_H5_FILES_DIR/$testfile"
 done
 
-# Clean up actual output
-echo ""
-echo "*** Do not cleanup the output files, they should be inspected ***"
-echo ""
-
 # Report test results and exit
+echo ""
 if test "$nerrors" -eq 0 ; then
     echo "All tests passed."
     exit $EXIT_SUCCESS
@@ -138,5 +172,3 @@ else
     echo "Tests failed with $nerrors errors."
     exit $EXIT_FAILURE
 fi
-
-echo "DONE!"
