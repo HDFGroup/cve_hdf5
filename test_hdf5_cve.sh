@@ -106,7 +106,7 @@ CVE_H5_FILES_DIR=cvefiles
 # CVE-2020-10811
 # CVE_2020_10812
 # CVE-2020-10812
-# CVE-2021-31009
+# CVE-2021-31009    Not an HDF5-specific issue
 # CVE-2021-36977    libFuzzer?
 # CVE-2021-37501
 # CVE-2021-45829    h5stat <file.h>
