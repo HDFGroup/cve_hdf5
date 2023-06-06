@@ -14,7 +14,7 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 |[CVE-2021-45829](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45829)|Y|[#1317](https://github.com/HDFGroup/hdf5/issues/1317)|
 |[CVE-2021-37501](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37501)|N|dead links at mitre.org (5)|
 |[CVE-2021-36977](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36977)|Y|[LINK](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=31265)|
-|[CVE-2021-31009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31009)|N|This appears to be a non-specific meta-issue|
+|[CVE-2021-31009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31009)|N|This does not appear to be a specific HDF5 issue (6)|
 |[CVE-2020-10812](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10812)|Y||
 |[CVE-2020-10811](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10811)|Y||
 |[CVE-2020-10810](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10810)|Y||
@@ -76,3 +76,4 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 3. These vulnerabilities involve the gif2h5 tool. A configuration option can be used to prevent building the GIF tools.
 4. [Cisco Talos](https://talosintelligence.com/vulnerability_reports) does not provide proof-of-concept files. We are attempting to contact them.
 5. Links on Mitre issue are dead.
+6. The links from Mitre go to Apple summaries and there are no specific files at any link. The submitter's GitHub page [LINK](https://github.com/jhftss) has no reproducers. This is probably not a specific HDF5 vulnerability, but a vulnerability in Apple's Model I/O that was fixed by removing HDF5.
