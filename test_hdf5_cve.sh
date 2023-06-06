@@ -106,6 +106,9 @@ CVE_H5_FILES_DIR=cvefiles
 # CVE-2020-10811
 # CVE_2020_10812
 # CVE-2020-10812
+# CVE-2021-31009
+# CVE-2021-36977    libFuzzer?
+# CVE-2021-37501
 # CVE-2021-45829    h5stat <file.h>
 # CVE-2021-45830    h5format_convert -n <file.h5>
 # CVE-2021-45832    h5format_convert -n <file.h5>
@@ -152,6 +155,7 @@ cve-2020-10810.h5
 cve-2020-10811.h5
 cve_2020_10812.h5
 cve-2020-10812.h5
+cve-2021-36977.h5
 cve-2021-45829.h5
 cve-2021-45830.h5
 cve-2021-45833.h5
