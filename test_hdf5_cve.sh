@@ -44,12 +44,27 @@ EXIT_SUCCESS=0
 EXIT_FAILURE=1
 nerrors=0
 
+# Check number of command-line arguments
+len=$#
+if [ $len -ne 2 ]; then
+    echo "Incorrect number of arguments. Check usage, above."
+    exit $EXIT_FAILURE
+fi
+
 # Location of HDF5 command-line tools
 bindir=$1
+if [ ! -f "$bindir/h5dump" ]; then
+    echo "Can't find HDF5 tools. Make sure the 1st argument is a valid path."
+    exit $EXIT_FAILURE
+fi
 
 # Output directory
 outdir=$2
 test -d "$outdir" || mkdir -p "$outdir"
+if [ ! -d "$outdir" ]; then
+    echo "Can't find output directory. Make sure the 2nd argument is a valid path."
+    exit $EXIT_FAILURE
+fi
 
 # Tool executables
 H5DUMP=$bindir/h5dump
