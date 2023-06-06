@@ -72,6 +72,51 @@ H5DUMP=$bindir/h5dump
 # Location of CVE files
 CVE_H5_FILES_DIR=cvefiles
 
+# How are the CVE issues tested?
+# CVE-2017-17505
+# CVE-2017-17506
+# CVE-2017-17507
+# CVE-2017-17508
+# CVE-2017-17509
+# CVE-2018-11202
+# CVE-2018-11203
+# CVE-2018-11204
+# CVE-2018-11205
+# CVE-2018-11206
+# CVE-2018-13873
+# CVE-2018-15671
+# CVE-2018-15672
+# CVE-2018-17233
+# CVE-2018-17234
+# CVE-2018-17433
+# CVE-2018-17434
+# CVE-2018-17435
+# CVE-2018-17436
+# CVE-2018-17437
+# CVE-2018-17438
+# CVE-2018-17439
+# CVE-2019-8396
+# CVE-2019-8397
+# CVE-2019-8398
+# CVE-2019-9151
+# CVE-2019-9152
+# CVE-2020-10809
+# CVE_2020_10810
+# CVE-2020-10810
+# CVE-2020-10811
+# CVE_2020_10812
+# CVE-2020-10812
+# CVE-2021-45829    h5stat <file.h>
+# CVE-2021-45830    h5format_convert -n <file.h5>
+# CVE-2021-45832    h5format_convert -n <file.h5>
+# CVE-2021-45833    h5dump <file.h5>
+# CVE-2021-46242    h5format_convert <file.h5>
+# CVE-2021-46243    h5ls <file.h5>
+# CVE-2021-46244    h5format_convert <file.h5>
+# CVE-2022-25942    gif2h5 <file.gif> <file.h5>
+# CVE-2022-25972    gif2h5 <file.gif> <file.h5>
+# CVE-2022-26061    gif2h5 <file.gif> <file.h5>
+
 CVE_TEST_FILES="
 cve-2017-17505.h5
 cve-2017-17506.h5

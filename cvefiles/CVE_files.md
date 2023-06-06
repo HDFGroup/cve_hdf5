@@ -2,16 +2,16 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 
 | CVE\_Issue\_Number | Tested? | File Source |
 |---------|---------|---------|
-|[CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)|N (GIF)|(Talos - no poc file)|
-|[CVE-2022-25972](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25972)|N (GIF)|(Talos - no poc file)|
-|[CVE-2022-25942](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25942)|N (GIF)|(Talos - no poc file)|
-|[CVE-2021-46244](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46244)|Y|(1)|
+|[CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)|N (GIF)|(pending custom GIF file)|
+|[CVE-2022-25972](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25972)|N (GIF)|(pending custom GIF file)|
+|[CVE-2022-25942](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25942)|N (GIF)|(pending custom GIF file)|
+|[CVE-2021-46244](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46244)|Y|[#1327](https://github.com/HDFGroup/hdf5/issues/1327) (1) WHERE?|
 |[CVE-2021-46243](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46243)|Y|[#1326](https://github.com/HDFGroup/hdf5/issues/1326)|
-|[CVE-2021-46242](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46242)|Y||
-|[CVE-2021-45833](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45833)|Y||
-|[CVE-2021-45832](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45832)|||
-|[CVE-2021-45830](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45830)|Y||
-|[CVE-2021-45829](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45829)|Y||
+|[CVE-2021-46242](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46242)|Y|[#1329](https://github.com/HDFGroup/hdf5/issues/1329)|
+|[CVE-2021-45833](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45833)|Y|[#1313](https://github.com/HDFGroup/hdf5/issues/1313)|
+|[CVE-2021-45832](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45832)|N|[#1315](https://github.com/HDFGroup/hdf5/issues/1315) (1)|
+|[CVE-2021-45830](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45830)|Y|[#1314](https://github.com/HDFGroup/hdf5/issues/1314)|
+|[CVE-2021-45829](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45829)|Y|[#1317](https://github.com/HDFGroup/hdf5/issues/1317)|
 |[CVE-2021-37501](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37501)|||
 |[CVE-2021-36977](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36977)|||
 |[CVE-2021-31009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31009)|||
@@ -74,5 +74,5 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 * [Cisco Talos](https://talosintelligence.com/vulnerability_reports) does not provide proof-of-concept files.
 * Vulnerabilities marked `GIF` involve the gif2h5 tool. A configuration option can be used to prevent building the GIF tools.
 
-1. The Mitre link points to an HDF5 GitHub issue that contains a text file instead of an HDF5 poc file.
+1. The Mitre link points to an HDF5 GitHub issue that contains a text file instead of an HDF5 file.
 2. CVE-2018-11207 and CVE-2018-15673 are duplicate issues for the same underlying issue.
