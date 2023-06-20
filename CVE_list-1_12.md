@@ -40,7 +40,6 @@
 | [CVE-2018-14035](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14035)          |        |        |        |        |        |        |        |         |
 | [CVE-2018-14034](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14034)          |        |        |        |        |        |        |        |         |
 | [CVE-2018-14033](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14033)          |        |        |        |        |        |        |        |         |
-| [CVE-2018-14032](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14032)          |        |        |        |        |        |        |        |         |
 | [CVE-2018-14031](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14031)          |        |        |        |        |        |        |        |         |
 | [CVE-2018-13876](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-13876)          |        |        |        |        |        |        |        |         |
 | [CVE-2018-13875](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-13875)          |        |        |        |        |        |        |        |         |
