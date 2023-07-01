@@ -15,10 +15,11 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 |[CVE-2021-37501](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37501)||dead links at mitre.org (5)|
 |[CVE-2021-36977](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36977)|Y|[LINK](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=31265)|
 |[CVE-2021-31009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31009)|N|This does not appear to be a specific HDF5 issue (7)|
-|[CVE-2020-10812](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10812)|Y|[h5_nrefs_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10812.h5) (7)|
-|[CVE-2020-10811](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10811)|Y|[h5dump_H5O__layout_decode_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10811.h5)(7)|
-|[CVE-2020-10810](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10810)|Y|[H5AC_unpin_entry_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10810.h5)(7)|
-|[CVE-2020-10809](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10809)|Y|[gif2h5_Decompress_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10809.h5)(6)|
+|[CVE-2020-10812](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10812)|Y|[h5_nrefs_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10812.h5) 
+ (7)|
+|[CVE-2020-10811](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10811)|Y|[h5dump_H5O__layout_decode_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10811.h5) (7)|
+|[CVE-2020-10810](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10810)|Y|[H5AC_unpin_entry_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10810.h5) (7)|
+|[CVE-2020-10809](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10809)|Y|[gif2h5_Decompress_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10809.h5) (6)|
 |[CVE-2019-9152](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9152)|Y|[H5MM_xstrdup_invalid-read-memory-access](https://github.com/magicSwordsMan/PAAFS/blob/master/vul8/H5MM_xstrdup_invalid-read-memory-access)|
 |[CVE-2019-9151](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-9151)|Y|[H5VM_memcpyvv_invalid-read-memory-access](https://github.com/magicSwordsMan/PAAFS/blob/master/vul7/H5VM_memcpyvv_invalid-read-memory-access)|
 |[CVE-2019-8398](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2019-8398)|Y|[H5T_get_size_invalid-read-memory-access](https://github.com/magicSwordsMan/PAAFS/blob/master/vul6/H5T_get_size_invalid-read-memory-access)|
