@@ -12,7 +12,7 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 |[CVE-2021-45832](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45832)|N|[#1315](https://github.com/HDFGroup/hdf5/issues/1315) (1)|
 |[CVE-2021-45830](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45830)|Y|[#1314](https://github.com/HDFGroup/hdf5/issues/1314)|
 |[CVE-2021-45829](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45829)|Y|[#1317](https://github.com/HDFGroup/hdf5/issues/1317)|
-|[CVE-2021-37501](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37501)|N|dead links at mitre.org (5)|
+|[CVE-2021-37501](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37501)|Y|[FILE](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2021-37501.h5)|
 |[CVE-2021-36977](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36977)|Y|[LINK](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=31265)|
 |[CVE-2021-31009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31009)|N|This does not appear to be a specific HDF5 issue (6)|
 |[CVE-2020-10812](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10812)|Y|[h5_nrefs_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10812.h5) (7)|
