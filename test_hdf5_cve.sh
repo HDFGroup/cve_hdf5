@@ -73,60 +73,60 @@ H5DUMP=$bindir/h5dump
 CVE_H5_FILES_DIR=cvefiles
 
 # How are the CVE issues tested?
-# CVE-2017-17505
-# CVE-2017-17506
-# CVE-2017-17507
-# CVE-2017-17508
-# CVE-2017-17509
-# CVE-2018-11202
-# CVE-2018-11203
-# CVE-2018-11204
-# CVE-2018-11205
-# CVE-2018-11206
-# CVE-2018-11207
-# CVE-2018-13866
-# CVE-2018-13867
-# CVE-2018-13868
-# CVE-2018-13869
-# CVE-2018-13870
-# CVE-2018-13871
-# CVE-2018-13872
-# CVE-2018-13873
-# CVE-2018-13874
-# CVE-2018-13875
-# CVE-2018-13876
-# CVE-2018-14031
-# CVE-2018-14033
-# CVE-2018-14034
-# CVE-2018-14035
-# CVE-2018-14460
-# CVE-2018-15671
-# CVE-2018-15672
-# CVE-2018-16438
-# CVE-2018-17233
-# CVE-2018-17234
-# CVE-2018-17237
-# CVE-2018-17432
-# CVE-2018-17433
-# CVE-2018-17434
-# CVE-2018-17435
-# CVE-2018-17436
-# CVE-2018-17437
-# CVE-2018-17438
-# CVE-2018-17439
-# CVE-2019-8396
-# CVE-2019-8397
-# CVE-2019-8398
-# CVE-2019-9151
-# CVE-2019-9152
-# CVE-2020-10809
-# CVE_2020_10810
-# CVE-2020-10811
-# CVE_2020_10812
+# CVE-2017-17505    h5dump <file.h5>
+# CVE-2017-17506    h5dump <file.h5>
+# CVE-2017-17507    h5dump <file.h5>
+# CVE-2017-17508    h5dump <file.h5>
+# CVE-2017-17509    h5dump <file.h5>
+# CVE-2018-11202    h5dump <file.h5>
+# CVE-2018-11203    h5dump <file.h5>
+# CVE-2018-11204    h5dump <file.h5>
+# CVE-2018-11205    h5dump <file.h5>
+# CVE-2018-11206    h5dump <file.h5>
+# CVE-2018-11207    h5stat -A -T -G -D -S <file.h5>
+# CVE-2018-13866    h5dump <file.h5>
+# CVE-2018-13867    h5dump <file.h5>
+# CVE-2018-13868    h5dump <file.h5>
+# CVE-2018-13869    h5dump <file.h5>
+# CVE-2018-13870    h5dump <file.h5>
+# CVE-2018-13871    h5dump <file.h5>
+# CVE-2018-13872    h5dump <file.h5>
+# CVE-2018-13873    h5dump <file.h5>
+# CVE-2018-13874    h5dump <file.h5>
+# CVE-2018-13875    h5dump <file.h5>
+# CVE-2018-13876    h5dump <file.h5>
+# CVE-2018-14031    h5dump <file.h5>
+# CVE-2018-14033    h5dump <file.h5>
+# CVE-2018-14034    h5dump <file.h5>
+# CVE-2018-14035    h5dump <file.h5>
+# CVE-2018-14460    h5dump <file.h5>
+# CVE-2018-15671    h5dump <file.h5>
+# CVE-2018-15672    h5dump <file.h5>
+# CVE-2018-16438    h5dump <file.h5>
+# CVE-2018-17233    h5dump -r -d BAG_root/metadata <file.h5>
+# CVE-2018-17234    h5dump <file.h5>
+# CVE-2018-17237    h5dump <file.h5>
+# CVE-2018-17432    h5repack <file1.h5> <file2.h5>
+# CVE-2018-17433    gif2h5 <file.gif> <file.h5>
+# CVE-2018-17434    h5repack -f GZIP=8 -l dset1:CHUNK=5x6 <file1.h5> <file2.h5>
+# CVE-2018-17435    h52gif <file.gif> image1.gif -i image
+# CVE-2018-17436    gif2h5 <file.gif> <file.h5>
+# CVE-2018-17437    h52gif <file.h5> <file.gif>
+# CVE-2018-17438    gif2h5 <file.gif> <file.h5>
+# CVE-2018-17439    gif2h5 <file.gif> <file.h5>
+# CVE-2019-8396     h5dump <file.h5>
+# CVE-2019-8397     h5repack <file1.h5> <file2.h5>
+# CVE-2019-8398     h5repack <file1.h5> <file2.h5>
+# CVE-2019-9151     h5repack <file1.h5> <file2.h5>
+# CVE-2019-9152     h5dump <file.h5>
+# CVE-2020-10809    gif2h5 <file.gif> <file.h5>
+# CVE_2020_10810    h5clear -s -m <file.h5>
+# CVE-2020-10811    h5dump -r -d BAG_root/metadata <file.h5>
+# CVE_2020_10812    h5debug <file.h5>
 # CVE-2021-31009    Not an HDF5-specific issue
 # CVE-2021-36977    libFuzzer?
-# CVE-2021-37501
-# CVE-2021-45829    h5stat <file.h>
+# CVE-2021-37501    h5dump <file.h5>
+# CVE-2021-45829    h5stat <file.h5>
 # CVE-2021-45830    h5format_convert -n <file.h5>
 # CVE-2021-45832    h5format_convert -n <file.h5>
 # CVE-2021-45833    h5dump <file.h5>
