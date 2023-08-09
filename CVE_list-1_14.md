@@ -1,18 +1,18 @@
 | CVE issue number                                                           | 1.14.0 | 1.14.1 | 1.14.2 | 1.14.x | 1.14.x | 1.14.x | 1.14.x | 1.14.xx |
 | :------------------------------------------------------------------------- | :----- | :----- | :----- | :----- | :----- | :----- | :----- | :------ |
-| [CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)          | UNTESTED | UNTESTED |        |        |        |        |        |         |
-| [CVE-2022-25972](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25972)          | UNTESTED | UNTESTED |        |        |        |        |        |         |
-| [CVE-2022-25942](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25942)          | UNTESTED | UNTESTED |        |        |        |        |        |         |
+| [CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)          | UNTESTED | UNTESTED | UNTESTED |        |        |        |        |         |
+| [CVE-2022-25972](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25972)          | UNTESTED | UNTESTED | UNTESTED |        |        |        |        |         |
+| [CVE-2022-25942](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25942)          | UNTESTED | UNTESTED | UNTESTED |        |        |        |        |         |
 | [CVE-2021-46244](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46244)          |        |        |        |        |        |        |        |         |
 | [CVE-2021-46243](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46243)          |        |        |        |        |        |        |        |         |
 | [CVE-2021-46242](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46242)          |        |        |        |        |        |        |        |         |
 | [CVE-2021-45833](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45833)          |        |        |        |        |        |        |        |         |
-| [CVE-2021-45832](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45832)          | UNTESTED | UNTESTED |        |        |        |        |        |         |
+| [CVE-2021-45832](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45832)          | UNTESTED | UNTESTED | UNTESTED |        |        |        |        |         |
 | [CVE-2021-45830](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45830)          |        |        |        |        |        |        |        |         |
 | [CVE-2021-45829](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45829)          |        |        |        |        |        |        |        |         |
 | [CVE-2021-37501](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37501)          | FAILED |        |        |        |        |        |        |         |
 | [CVE-2021-36977](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36977)          |        |        |        |        |        |        |        |         |
-| [CVE-2021-31009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31009)          | UNTESTED | UNTESTED |        |        |        |        |        |         |
+| [CVE-2021-31009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31009)          | UNTESTED | UNTESTED | UNTESTED |        |        |        |        |         |
 | [CVE-2020-10812](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10812)          |        |        |        |        |        |        |        |         |
 | [CVE-2020-10811](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10811)          |        |        |        |        |        |        |        |         |
 | [CVE-2020-10810](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10810)          |        |        |        |        |        |        |        |         |
@@ -35,7 +35,7 @@
 | [CVE-2018-17233](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-17233)          |        |        |        |        |        |        |        |         |
 | [CVE-2018-16438](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-16438)          |        |        |        |        |        |        |        |         |
 | [CVE-2018-15672](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15672)          |        |        |        |        |        |        |        |         |
-| [CVE-2018-15671](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15671)          | FAILED | FAILED |        |        |        |        |        |         |
+| [CVE-2018-15671](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-15671)          | FAILED | FAILED | FAILED |        |        |        |        |         |
 | [CVE-2018-14460](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14460)          |        |        |        |        |        |        |        |         |
 | [CVE-2018-14035](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14035)          |        |        |        |        |        |        |        |         |
 | [CVE-2018-14034](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2018-14034)          |        |        |        |        |        |        |        |         |
@@ -63,8 +63,8 @@
 | [CVE-2017-17507](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17507)          | FAILED | FAILED |        |        |        |        |        |         |
 | [CVE-2017-17506](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17506)          |        |        |        |        |        |        |        |         |
 | [CVE-2017-17505](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17505)          |        |        |        |        |        |        |        |         |
-| [CVE-2016-4333](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4333)            | UNTESTED | UNTESTED |        |        |        |        |        |         |
-| [CVE-2016-4332](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4332)            | UNTESTED | UNTESTED |        |        |        |        |        |         |
-| [CVE-2016-4331](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4331)            | UNTESTED | UNTESTED |        |        |        |        |        |         |
-| [CVE-2016-4330](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4330)            | UNTESTED | UNTESTED |        |        |        |        |        |         |
+| [CVE-2016-4333](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4333)            | UNTESTED | UNTESTED | UNTESTED |        |        |        |        |         |
+| [CVE-2016-4332](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4332)            | UNTESTED | UNTESTED | UNTESTED |        |        |        |        |         |
+| [CVE-2016-4331](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4331)            | UNTESTED | UNTESTED | UNTESTED |        |        |        |        |         |
+| [CVE-2016-4330](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4330)            | UNTESTED | UNTESTED | UNTESTED |        |        |        |        |         |
 
