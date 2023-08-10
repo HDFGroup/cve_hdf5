@@ -68,3 +68,8 @@
 | [CVE-2016-4331](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4331)            |        |        |        |        |        |        |        |         |
 | [CVE-2016-4330](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4330)            |        |        |        |        |        |        |        |         |
 
+## NOTES
+* No test files are available for the 2016 CVE issues as Talos doesn't release proof-of-vulnerability files. We will add our own proof-of-vulnerability files in the future.
+* CVE-2021-45832 has no known proof of vulnerability file. We will attempt to create our own.
+* CVE-2021-31009 is not a specific vulnerability against HDF5.
+* CVE-2022-25942, CVE-2022-25972, and CVE-2022-26061 are not tested. Those vulnerabilities involve the high-level GIF tools and can be avoided by disabling those tools at build time.
