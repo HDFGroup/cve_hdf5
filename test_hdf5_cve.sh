@@ -138,6 +138,12 @@ CVE_H5_FILES_DIR=cvefiles
 # CVE-2022-26061    gif2h5 <file.gif> <file.h5>
 
 CVE_TEST_FILES="
+cve-2016-4330.h5
+cve-2016-4331.h5
+cve-2016-4332-mtime.h5
+cve-2016-4332-mtime-new.h5
+cve-2016-4332-stab.h5
+cve-2016-4333.h5
 cve-2017-17505.h5
 cve-2017-17506.h5
 cve-2017-17507.h5
