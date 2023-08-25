@@ -1,8 +1,8 @@
 | CVE issue number                                                           | 1.10.3 | 1.10.4 | 1.10.5 | 1.10.6 | 1.10.7 | 1.10.8 | 1.10.9 | 1.10.10 |
 | :------------------------------------------------------------------------- | :----- | :----- | :----- | :----- | :----- | :----- | :----- | :------ |
-| [CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)          |        |        |        |        |        |        |        |         |
-| [CVE-2022-25972](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25972)          |        |        |        |        |        |        |        |         |
-| [CVE-2022-25942](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25942)          |        |        |        |        |        |        |        |         |
+| [CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)          | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED |
+| [CVE-2022-25972](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25972)          | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED |
+| [CVE-2022-25942](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25942)          | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED |
 | [CVE-2021-46244](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46244)          | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   |
 | [CVE-2021-46243](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46243)          | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   |
 | [CVE-2021-46242](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46242)          |          |          |          |          | FAILED   | FAILED   |          |          |
