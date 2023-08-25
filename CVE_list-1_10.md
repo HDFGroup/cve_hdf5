@@ -7,7 +7,7 @@
 | [CVE-2021-46243](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46243)          | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   |
 | [CVE-2021-46242](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-46242)          |          |          |          |          | FAILED   | FAILED   |          |          |
 | [CVE-2021-45833](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45833)          | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   |
-| [CVE-2021-45832](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45832)          |   N/A    | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED |
+| [CVE-2021-45832](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45832)          | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED |
 | [CVE-2021-45830](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45830)          |          |          |          |          |          |          |          |          |
 | [CVE-2021-45829](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-45829)          |          |          |          |          |          |          |          |          |
 | [CVE-2021-37501](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37501)          |          |          |          |          | FAILED   | FAILED   | FAILED   |          |
