@@ -63,10 +63,10 @@
 | [CVE-2017-17507](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17507)          | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   | FAILED   |
 | [CVE-2017-17506](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17506)          |          |          |          |          |          |          |          |          |
 | [CVE-2017-17505](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2017-17505)          |          |          |          |          |          |          |          |          |
-| [CVE-2016-4333](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4333)            | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED |
-| [CVE-2016-4332](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4332)            | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED |
-| [CVE-2016-4331](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4331)            | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED |
-| [CVE-2016-4330](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4330)            | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED | UNTESTED |
+| [CVE-2016-4333](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4333)            |          |          |          |          |          |  FAILED  |          |          |
+| [CVE-2016-4332](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4332)            |          |          |          |           |  FAILED  |  FAILED  |          |          |
+| [CVE-2016-4331](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4331)            |          |          |          |          |          |  FAILED  |          |          |
+| [CVE-2016-4330](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2016-4330)            |          |          |          |          |          |          |          |          |
 
 ## NOTES
 * No test files are available for the 2016 CVE issues as Talos doesn't release proof-of-vulnerability files. We will add our own proof-of-vulnerability files in the future.
