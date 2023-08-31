@@ -1,5 +1,5 @@
-| CVE issue number                                                           | 1.12.0 | 1.12.1 | 1.12.2 |
-| :------------------------------------------------------------------------- | :----- | :----- | :----- |
+| CVE issue number                                                           | 1.12.0 | 1.12.1 | 1.12.2 | 1.12.3 |
+| :------------------------------------------------------------------------- | :----- | :----- | :----- | :----- |
 | [CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)          | UNTESTED | UNTESTED | UNTESTED |
 | [CVE-2022-25972](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25972)          | UNTESTED | UNTESTED | UNTESTED |
 | [CVE-2022-25942](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25942)          | UNTESTED | UNTESTED | UNTESTED |
