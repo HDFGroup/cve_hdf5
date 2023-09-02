@@ -4,6 +4,26 @@ Testing HDF5 against known CVE issues
 
 Tests HDF5 CVE issues via the command-line tools. Most HDF5 CVE issues
 are due to incorrect behavior when parsing corrupt files. This test
+script opens the CVE demonstration files using the HDF command-line
+tools to ensure that the library the tools are linked to behaves
+correctly when parsing these files.
+
+A PASSED test indicates that the tool exited normally (no segfaults,
+etc.) and emitted a success/fail return value.
+
+USAGE:
+
+      ./test_hdf5_cve.sh <path/to/tools> <output_dir>
+
+      path/to/tools is the path to where the command-line tools
+      (e.g., h5dump) can be found. It can be relative or absolute.
+
+      output_dir is where you would like to put the stderr/stdout
+      output from each test.
+
+The script returns 0 on success and 1 on failure so it can be used
+in CI actions.
+
 cve-2021-46244.h5			 ❌       |  ❌       |  ❌       |  ✅       |  
 cve-2021-46243.h5			 ❌       |  ❌       |  ❌       |  ✅       |  
 cve-2021-46242.h5			 ❌       |  ✅       |  ✅       |  ✅       |  
@@ -52,8 +72,8 @@ cve-2018-13868.h5			 ✅       |  ✅       |  ✅       |  ✅       |
 cve-2018-13867.h5			 ❌       |  ❌       |  ❌       |  ❌       |  
 cve-2018-13866.h5			 ❌       |  ✅       |  ✅       |  ❌       |  
 cve-2018-11207.h5			 ❌       |  ✅       |  ✅       |  ✅       |  
-cve-2018-11206-old.h5		 ✅       |  ✅       |  ✅       |  ✅       |  
-cve-2018-11206-new.h5		 ✅       |  ✅       |  ✅       |  ✅       |  
+cve-2018-11206-old.h5			 ✅       |  ✅       |  ✅       |  ✅       |  
+cve-2018-11206-new.h5			 ✅       |  ✅       |  ✅       |  ✅       |  
 cve-2018-11205.h5			 ❌       |  ❌       |  ❌       |  ❌       |  
 cve-2018-11204.h5			 ✅       |  ✅       |  ✅       |  ✅       |  
 cve-2018-11203.h5			 ❌       |  ✅       |  ✅       |  ✅       |  
@@ -64,8 +84,10 @@ cve-2017-17507.h5			 ❌       |  ❌       |  ❌       |  ❌       |
 cve-2017-17506.h5			 ✅       |  ✅       |  ✅       |  ✅       |  
 cve-2017-17505.h5			 ✅       |  ✅       |  ✅       |  ✅       |  
 cve-2016-4333.h5			 ❌       |  ✅       |  ✅       |  ✅       |  
-cve-2016-4332-stab.h5		 ❌       |  ✅       |  ✅       |  ❌       |  
-cve-2016-4332-mtime-new.h5	 ❌       |  ✅       |  ✅       |  ❌       |  
-cve-2016-4332-mtime.h5		 ❌       |  ✅       |  ✅       |  ❌       |  
+cve-2016-4332-stab.h5			 ❌       |  ✅       |  ✅       |  ❌       |  
+cve-2016-4332-mtime-new.h5			 ❌       |  ✅       |  ✅       |  ❌       |  
+cve-2016-4332-mtime.h5			 ❌       |  ✅       |  ✅       |  ❌       |  
 cve-2016-4331.h5			 ❌       |  ✅       |  ✅       |  ✅       |  
 cve-2016-4330.h5			 ✅       |  ✅       |  ✅       |  ✅       |  
+
+Tests failed with 65 errors.
