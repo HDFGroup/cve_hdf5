@@ -68,6 +68,14 @@ fi
 
 # Tool executables
 H5DUMP=$bindir/h5dump
+H5CLEAR=$bindir/h5clear
+H5DEBUG=$bindir/h5debug
+GIF2H5=$bindir/gif2h5
+H5FORMAT_CONVERT=$bindir/h5format_convert
+H5LS=$bindir/h5ls
+H52GIF=$bindir/h52gif
+H5REPACK=$bindir/h5repack
+H5STAT=$bindir/h5stat
 
 # Location of CVE files
 CVE_H5_FILES_DIR=cvefiles
@@ -120,9 +128,9 @@ CVE_H5_FILES_DIR=cvefiles
 # CVE-2019-9151     h5repack <file1.h5> <file2.h5>
 # CVE-2019-9152     h5dump <file.h5>
 # CVE-2020-10809    gif2h5 <file.gif> <file.h5>
-# CVE_2020_10810    h5clear -s -m <file.h5>
+# CVE-2020-10810    h5clear -s -m <file.h5>
 # CVE-2020-10811    h5dump -r -d BAG_root/metadata <file.h5>
-# CVE_2020_10812    h5debug <file.h5>
+# CVE-2020-10812    h5debug <file.h5>
 # CVE-2021-31009    Not an HDF5-specific issue
 # CVE-2021-36977    libFuzzer?
 # CVE-2021-37501    h5dump <file.h5>
@@ -137,7 +145,54 @@ CVE_H5_FILES_DIR=cvefiles
 # CVE-2022-25972    gif2h5 <file.gif> <file.h5>
 # CVE-2022-26061    gif2h5 <file.gif> <file.h5>
 
-CVE_TEST_FILES="
+H52GIF_TEST_FILES="
+cve-2018-17435.h5
+cve-2018-17437.h5
+"
+
+H5CLEAR_TEST_FILES="
+cve-2020-10810.h5
+"
+
+H5DEBUG_TEST_FILES="
+cve-2020-10812.h5
+"
+
+H5LS_TEST_FILES="
+cve-2021-46243.h5
+"
+
+H5FORMAT_CONVERT_TEST_FILES="
+cve-2021-45830.h5
+cve-2021-45832.h5
+cve-2021-46242.h5
+cve-2021-46244.h5
+"
+
+H5STAT_TEST_FILES="
+cve-2018-11207.h5
+cve-2021-45829.h5
+"
+
+GIF2H5_TEST_FILES="
+cve-2018-17433.h5
+cve-2018-17436.h5
+cve-2018-17438.h5
+cve-2018-17439.h5
+cve-2020-10809.h5
+cve-2022-25942.h5
+cve-2022-25972.h5
+cve-2022-26061.h5
+"
+
+H5REPACK_TEST_FILES="
+cve-2018-17432.h5
+cve-2018-17434.h5
+cve-2019-8397.h5
+cve-2019-8398.h5
+cve-2019-9151.h5
+"
+H5DUMP_TEST_FILES="
 cve-2016-4330.h5
 cve-2016-4331.h5
 cve-2016-4332-mtime.h5
@@ -205,10 +260,37 @@ cve-2021-46243.h5
 cve-2021-46244.h5
 "
 
-# Run user-provided h5dump on a given CVE file and report PASSED or FAILED
-TEST_CVEFILE() {
+# Checks return value and display appropriate message
+CHECK_RET() {
+
+    ret=$1
+
+    # A test passes when it invokes normal HDF5 error handling.
+    if [[ $ret == 139 ]] ; then
+        nerrors=$(( nerrors + 1 ))
+        echo "***FAILED*** (Segmentation fault)"
+    elif [[ $ret == 136 ]] ; then
+        nerrors=$(( nerrors + 1 ))
+        echo "***FAILED*** (Floating point exception)"
+    elif [[ $ret == 124 ]] ; then
+        nerrors=$(( nerrors + 1 ))
+        echo "***FAILED*** (Probable infinite loop)"
+    elif [[ $ret == 57 ]] ; then
+        nerrors=$(( nerrors + 1 ))
+        echo "***FAILED*** (Abort)"
+    elif [[ $ret == 0 || $ret == 1 ]] ; then
+        echo "PASSED"
+    else
+        nerrors=$(( nerrors + 1 ))
+        echo "***FAILED*** (Unexpected error: $ret)"
+    fi
+}
+
+# Run user-provided h5repack on a given CVE file and report PASSED or FAILED
+TEST_H5REPACK() {
 
     infile=$1
+    outfile=$2
     base=$(basename "$1" .exp)
 
     echo -ne "$base\t\t\t"
@@ -220,7 +302,7 @@ TEST_CVEFILE() {
     (
         # Run using timeout to detect infinite loops.
         # Timeout returns 124 when the timeout has been exceeded.
-        timeout 10 $H5DUMP "$infile"
+        timeout 10 $H5REPACK "$infile" "$outfile"
 
         RET=$?
 
@@ -237,36 +319,140 @@ TEST_CVEFILE() {
 
     RET=$?
 
-    # A test passes when it invokes normal HDF5 error handling.
-    if [[ $RET == 139 ]] ; then
-        nerrors=$(( nerrors + 1 ))
-        echo "***FAILED*** (Segmentation fault)"
-    elif [[ $RET == 136 ]] ; then
-        nerrors=$(( nerrors + 1 ))
-        echo "***FAILED*** (Floating point exception)"
-    elif [[ $RET == 124 ]] ; then
-        nerrors=$(( nerrors + 1 ))
-        echo "***FAILED*** (Probable infinite loop)"
-    elif [[ $RET == 57 ]] ; then
-        nerrors=$(( nerrors + 1 ))
-        echo "***FAILED*** (Abort)"
-    elif [[ $RET == 0 || $RET == 1 ]] ; then
-        echo "PASSED"
-    else
-        nerrors=$(( nerrors + 1 ))
-        echo "***FAILED*** (Unexpected error: $RET)"
-    fi
+    CHECK_RET "$RET"
+}
+
+TEST_TOOL_SIMPLE() {
+
+    infile=$1
+    base=$(basename "$1" .exp)
+    tool=$2
+    echo -ne "$base\t\t\t"
+
+    # Store actual output in a file for inspection and reducing clutter on screen
+    outfile="$base.out"
+
+    # Run test, redirecting stderr and stdout to the output file
+    (
+        # Run using timeout to detect infinite loops.
+        # Timeout returns 124 when the timeout has been exceeded.
+        timeout 10 $tool "$infile"
+
+        RET=$?
+
+        # An abort (exit code 134) will cause bash to emit a bunch of noise.
+        # Instead, we change the exit code to something the command line
+        # tools don't use.
+        if [[ $RET == 134 ]] ; then
+            exit 57
+        else
+            exit $RET
+        fi
+
+    ) > "$outdir/$outfile" 2>&1
+
+    RET=$?
+
+    CHECK_RET "$RET"
+}
+
+TEST_H52GIF() {
+    echo $H52GIF
+}
+
+TEST_GIF2H5() {
+    echo $GIF2H5
 }
 
 # Show the HDF5 version
 $H5DUMP -V
 echo ""
 
+#
+# Run these tools on all CVE files without option:
+# h5dump, h5debug, h5ls, h5repack, and h5stat
+#
+
 # Run h5dump on each CVE file
-for testfile in $CVE_TEST_FILES
+for testfile in $H5DUMP_TEST_FILES
 do
-    TEST_CVEFILE "$CVE_H5_FILES_DIR/$testfile"
+    TEST_TOOL_SIMPLE "$CVE_H5_FILES_DIR/$testfile" "$H5DUMP"
 done
+
+# Run h5debug on each CVE file
+echo ""
+echo "  === h5debug ==="
+for testfile in $H5DEBUG_TEST_FILES
+do
+    TEST_TOOL_SIMPLE "$CVE_H5_FILES_DIR/$testfile" "$H5DEBUG"
+done
+
+# Run h5ls on each CVE file
+echo ""
+echo "  === h5ls ==="
+for testfile in $H5LS_TEST_FILES
+do
+    TEST_TOOL_SIMPLE "$CVE_H5_FILES_DIR/$testfile" "$H5LS"
+#    TEST_H5LS "$CVE_H5_FILES_DIR/$testfile"
+done
+
+# Run h5repack on each CVE file
+echo ""
+echo "  === h5repack ==="
+for testfile in $H5REPACK_TEST_FILES
+do
+    TEST_H5REPACK "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile"
+done
+
+# Run h5stat on each CVE file
+echo ""
+echo "  === h5stat ==="
+for testfile in $H5STAT_TEST_FILES
+do
+    TEST_TOOL_SIMPLE "$CVE_H5_FILES_DIR/$testfile" "$H5STAT"
+done
+
+#
+# Run the rest of the tools on specific files and options - *** in progress ***
+#
+
+# Run h5clear on each CVE file
+# echo ""
+# echo "  === h5clear ==="
+# for testfile in $H5CLEAR_TEST_FILES
+# do
+#     $H5CLEAR -s -m "$CVE_H5_FILES_DIR/$testfile"
+# done
+
+# Run h5format_convert on each CVE file
+# echo ""
+# echo "  === h5format_convert ==="
+# for testfile in $H5FORMAT_CONVERT_TEST_FILES
+# do
+#     echo "file: $testfile"
+#     $H5FORMAT_CONVERT "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/'$testfile'-out"
+    #$H5FORMAT_CONVERT -n "$CVE_H5_FILES_DIR/$testfile"
+# done
+
+# Show the HDF5 version
+#$H52GIF -V
+#echo ""
+
+# Run h52gif on each CVE file
+#for testfile in $H52GIF_TEST_FILES
+#do
+#    TEST_H52GIF "$CVE_H5_FILES_DIR/$testfile"
+#done
+
+# Show the HDF5 version
+#$GIF2H5 -V
+#echo ""
+
+# Run gif2h5 on each CVE file
+#for testfile in $GIF2H5_TEST_FILES
+#do
+#    TEST_GIF2H5 "$CVE_H5_FILES_DIR/$testfile"
+#done
 
 # Report test results and exit
 echo ""
