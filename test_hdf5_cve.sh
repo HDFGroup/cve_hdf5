@@ -343,7 +343,7 @@ echo ""
 ##############################################################################
 
 # Run h5dump on each CVE file with no options
-echo "  === h5debug on all files ==="
+echo "  === h5dump on all files ==="
 echo ""
 for testfile in $CVE_TEST_FILES
 do
