@@ -70,8 +70,10 @@ fi
 H5DUMP=$bindir/h5dump
 H5CLEAR=$bindir/h5clear
 H5DEBUG=$bindir/h5debug
+GIF2H5=$bindir/gif2h5
 H5FORMAT_CONVERT=$bindir/h5format_convert
 H5LS=$bindir/h5ls
+H52GIF=$bindir/h52gif
 H5REPACK=$bindir/h5repack
 H5STAT=$bindir/h5stat
 
