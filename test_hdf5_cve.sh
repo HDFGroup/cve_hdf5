@@ -290,21 +290,23 @@ CHECK_RET() {
 TEST_TOOL_2FILES() {
 
     infile=$1
-    outfile=$2
+    repacked_file=$2
     base=$(basename "$1" .exp)
+    tool=$H5REPACK
+    toolbase=$(basename "$tool")
     shift
     shift
 
     echo -ne "$base\t\t\t"
 
     # Store actual output in a file for inspection and reducing clutter on screen
-    outfile="$base.out"
+    outfile="$toolbase-$base.out"
 
     # Run test, redirecting stderr and stdout to the output file
     (
         # Run using timeout to detect infinite loops.
         # Timeout returns 124 when the timeout has been exceeded.
-        timeout 10 $H5REPACK "$@" "$infile" "$outfile"
+        timeout 10 $tool "$@" "$infile" "$repacked_file"
 
         RET=$?
 
@@ -324,7 +326,7 @@ TEST_TOOL_2FILES() {
     CHECK_RET "$RET"
 
     # Clean up generated output files
-    rm -f $outfile
+    rm -f $repacked_file
 }
 
 # Run user-provided tool on a given CVE file and report PASSED or FAILED
@@ -333,12 +335,13 @@ TEST_TOOL() {
     infile=$1
     base=$(basename "$1" .exp)
     tool=$2
+    toolbase=$(basename "$tool")
     echo -ne "$base\t\t\t"
     shift
     shift
 
     # Store actual output in a file for inspection and reducing clutter on screen
-    outfile="$base.out"
+    outfile="$toolbase-$base.out"
 
     # Run test, redirecting stderr and stdout to the output file
     (
