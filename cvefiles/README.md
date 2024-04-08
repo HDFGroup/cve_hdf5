@@ -2,6 +2,41 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 
 | CVE\_Issue\_Number | Tested? | File Source |
 |---------|---------|---------|
+|[CVE-2024-0116-001](official_cve_url)|Y|[cve-2024-0116-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-0116-001.h5)|
+|[CVE-2024-0112-001](official_cve_url)|Y|[cve-2024-0112-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-0112-001.h5)|
+|[CVE-2024-0111-001](official_cve_url)|Y|[cve-2024-0111-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-0111-001.h5)|
+|[CVE-2023-1208-002](official_cve_url)|Y|[cve-2023-1208-002.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1208-002.h5)|
+|[CVE-2023-1208-001](official_cve_url)|Y|[cve-2023-1208-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1208-001.h5)|
+|[CVE-2023-1207-001](official_cve_url)|Y|[cve-2023-1207-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1207-001.h5)|
+|[CVE-2023-1205-001](official_cve_url)|Y|[cve-2023-1205-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1205-001.h5)|
+|[CVE-2023-1202-002](official_cve_url)|Y|[cve-2023-1202-002.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1202-002.h5)|
+|[CVE-2023-1202-001](official_cve_url)|Y|[cve-2023-1202-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1202-001.h5)|
+|[CVE-2023-1130-001](official_cve_url)|Y|[cve-2023-1130-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1130-001.h5)|
+|[CVE-2023-1125-001](official_cve_url)|Y|[cve-2023-1125-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1125-001.h5)|
+|[CVE-2023-1114-001](official_cve_url)|Y|[cve-2023-1114-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1114-001.h5)|
+|[CVE-2023-1113-002](official_cve_url)|Y|[cve-2023-1113-002.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1113-002.h5)|
+|[CVE-2023-1113-001](official_cve_url)|Y|[cve-2023-1113-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1113-001.h5)|
+|[CVE-2023-1108-001](official_cve_url)|Y|[cve-2023-1108-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1108-001.h5)|
+|[CVE-2023-1104-004](official_cve_url)|Y|[cve-2023-1104-004.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1104-004.h5)|
+|[CVE-2023-1104-003](official_cve_url)|Y|[cve-2023-1104-003.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1104-003.h5)|
+|[CVE-2023-1104-002](official_cve_url)|Y|[cve-2023-1104-002.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1104-002.h5)|
+|[CVE-2023-1104-001](official_cve_url)|Y|[cve-2023-1104-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1104-001.h5)|
+|[CVE-2023-1023-001](official_cve_url)|Y|[cve-2023-1023-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1023-001.h5)|
+|[CVE-2023-1019-001](official_cve_url)|Y|[cve-2023-1019-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1019-001.h5)|
+|[CVE-2023-1018-001](official_cve_url)|Y|[cve-2023-1018-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1018-001.h5)|
+|[CVE-2023-1017-002](official_cve_url)|Y|[cve-2023-1017-002.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1017-002.h5)|
+|[CVE-2023-1017-001](official_cve_url)|Y|[cve-2023-1017-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1017-001.h5)|
+|[CVE-2023-1013-004](official_cve_url)|Y|[cve-2023-1013-004.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1013-004.h5)|
+|[CVE-2023-1013-003](official_cve_url)|Y|[cve-2023-1013-003.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1013-003.h5)|
+|[CVE-2023-1013-002](official_cve_url)|Y|[cve-2023-1013-002.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1013-002.h5)|
+|[CVE-2023-1013-001](official_cve_url)|Y|[cve-2023-1013-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1013-001.h5)|
+|[CVE-2023-1012-001](official_cve_url)|Y|[cve-2023-1012-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1012-001.h5)|
+|[CVE-2023-1010-001](official_cve_url)|Y|[cve-2023-1010-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1010-001.h5)|
+|[CVE-2023-1009-001](official_cve_url)|Y|[cve-2023-1009-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1009-001.h5)|
+|[CVE-2023-1006-004](official_cve_url)|Y|[cve-2023-1006-004.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1006-004.h5)|
+|[CVE-2023-1006-003](official_cve_url)|Y|[cve-2023-1006-003.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1006-003.h5)|
+|[CVE-2023-1006-002](official_cve_url)|Y|[cve-2023-1006-002.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1006-002.h5)|
+|[CVE-2023-1006-001](official_cve_url)|Y|[cve-2023-1006-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1006-001.h5)|
 |[CVE-2022-26061](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-26061)|N|pending custom GIF file (3)|
 |[CVE-2022-25972](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25972)|N|pending custom GIF file (3)|
 |[CVE-2022-25942](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2022-25942)|N|pending custom GIF file (3)|
