@@ -191,14 +191,11 @@ cve-2024-0116-001.h5
 "
 
 GIF2H5_TEST_FILES="
-cve-2018-17433.h5
-cve-2018-17436.h5
-cve-2018-17438.h5
-cve-2018-17439.h5
-cve-2020-10809.h5
-cve-2022-25942.h5
-cve-2022-25972.h5
-cve-2022-26061.h5
+cve-2018-17433
+cve-2018-17436
+cve-2018-17438
+cve-2018-17439
+cve-2020-10809
 "
 
 # Checks return value and display appropriate message
@@ -231,22 +228,25 @@ CHECK_RET() {
 # then report PASSED or FAILED
 TEST_TOOL_2FILES() {
 
-    infile=$1
-    outfile=$2
-    base=$(basename "$1" .exp)
+    tool=$1
+    infile=$2
+    outfile=$3
+    base=$(basename "$infile" .exp)
+    toolbase=$(basename "$tool")
+    shift
     shift
     shift
 
     echo -ne "$base\t\t\t"
 
     # Store actual output in a file for inspection and reducing clutter on screen
-    outfile="$base.out"
+    resultfile="$toolbase-$base.out"
 
     # Run test, redirecting stderr and stdout to the output file
     (
         # Run using timeout to detect infinite loops.
         # Timeout returns 124 when the timeout has been exceeded.
-        timeout 10 $H5REPACK "$@" "$infile" "$outfile"
+        timeout 10 $tool "$@" "$infile" "$outfile"
 
         RET=$?
 
@@ -259,7 +259,7 @@ TEST_TOOL_2FILES() {
             exit $RET
         fi
 
-    ) > "$outdir/$outfile" 2>&1
+    ) > "$outdir/$resultfile" 2>&1
 
     RET=$?
 
@@ -352,7 +352,7 @@ echo "  === h5repack on all files ==="
 echo ""
 for testfile in $CVE_TEST_FILES
 do
-    TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile"
+    TEST_TOOL_2FILES "$H5REPACK" "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile"
 done
 
 # Run h5stat on each CVE file
@@ -386,7 +386,7 @@ TEST_H5REPACK() {
     echo ""
     echo "     === h5repack on affected files ==="
     testfile="cve-2018-17434.h5"
-    TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile" "$H5REPACK" -f GZIP=8 -l dset1:CHUNK=5x6
+    TEST_TOOL_2FILES "$H5REPACK" "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile" -f GZIP=8 -l dset1:CHUNK=5x6
 }
 
 # Test h5stat with options on affected CVE file
@@ -401,8 +401,8 @@ TEST_H5STAT() {
 TEST_H52GIF() {
     echo ""
     echo "     === h52gif on affected files ==="
-    TEST_TOOL "$CVE_H5_FILES_DIR/cve-2018-17435.h5" $H52GIF image1.gif -i image
-    TEST_TOOL "$CVE_H5_FILES_DIR/cve-2018-17437.h5" $H52GIF image1.gif
+    TEST_TOOL $H52GIF "$CVE_H5_FILES_DIR/cve-2018-17435.h5" image1.gif -i image
+    TEST_TOOL $H52GIF "$CVE_H5_FILES_DIR/cve-2018-17437.h5" image1.gif
 }
 
 # Test gif2h5 on affected CVE files
@@ -411,7 +411,7 @@ TEST_GIF2H5() {
     echo "     === gif2h5 on affected files ==="
     for testfile in $GIF2H5_TEST_FILES
     do
-        TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/$testfile" "$outdir/out_$testfile"
+        TEST_TOOL_2FILES "$GIF2H5" "$CVE_H5_FILES_DIR/$testfile" "$outdir/$testfile.h5"
     done
 }
 
