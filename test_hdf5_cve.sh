@@ -77,85 +77,36 @@ H52GIF=$bindir/h52gif
 H5REPACK=$bindir/h5repack
 H5STAT=$bindir/h5stat
 
+##
+# In case GIF tools are not built
+##
+SKIP_H52GIF=1
+SKIP_GIF2H5=1
+
+# Set flag to skip a gif tool if it is not available
+SET_GIFTOOL() {
+    tool=$1
+    declare -n arg=$2
+    toolpath=$bindir/$tool
+    if ! test -f $toolpath; then
+        arg=0
+    fi
+}
+
+# Call SET_GIFTOOL to set the SKIP flag appropriately
+SET_GIFTOOL "gif2h5" SKIP_GIF2H5
+SET_GIFTOOL "h52gif" SKIP_H52GIF
+
 # Location of CVE files
 CVE_H5_FILES_DIR=cvefiles
 
-# How are the CVE issues tested?
-# CVE-2017-17505    h5dump <file.h5>
-# CVE-2017-17506    h5dump <file.h5>
-# CVE-2017-17507    h5dump <file.h5>
-# CVE-2017-17508    h5dump <file.h5>
-# CVE-2017-17509    h5dump <file.h5>
-# CVE-2018-11202    h5dump <file.h5>
-# CVE-2018-11203    h5dump <file.h5>
-# CVE-2018-11204    h5dump <file.h5>
-# CVE-2018-11205    h5dump <file.h5>
-# CVE-2018-11206    h5dump <file.h5>
-# CVE-2018-11207    h5stat -A -T -G -D -S <file.h5>
-# CVE-2018-13866    h5dump <file.h5>
-# CVE-2018-13867    h5dump <file.h5>
-# CVE-2018-13868    h5dump <file.h5>
-# CVE-2018-13869    h5dump <file.h5>
-# CVE-2018-13870    h5dump <file.h5>
-# CVE-2018-13871    h5dump <file.h5>
-# CVE-2018-13872    h5dump <file.h5>
-# CVE-2018-13873    h5dump <file.h5>
-# CVE-2018-13874    h5dump <file.h5>
-# CVE-2018-13875    h5dump <file.h5>
-# CVE-2018-13876    h5dump <file.h5>
-# CVE-2018-14031    h5dump <file.h5>
-# CVE-2018-14033    h5dump <file.h5>
-# CVE-2018-14034    h5dump <file.h5>
-# CVE-2018-14035    h5dump <file.h5>
-# CVE-2018-14460    h5dump <file.h5>
-# CVE-2018-15671    h5dump <file.h5>
-# CVE-2018-15672    h5dump <file.h5>
-# CVE-2018-16438    h5dump <file.h5>
-# CVE-2018-17233    h5dump -r -d BAG_root/metadata <file.h5>
-# CVE-2018-17234    h5dump <file.h5>
-# CVE-2018-17237    h5dump <file.h5>
-# CVE-2018-17432    h5repack <file1.h5> <file2.h5>
-# CVE-2018-17433    gif2h5 <file.gif> <file.h5>
-# CVE-2018-17434    h5repack -f GZIP=8 -l dset1:CHUNK=5x6 <file1.h5> <file2.h5>
-# CVE-2018-17435    h52gif <file.gif> image1.gif -i image
-# CVE-2018-17436    gif2h5 <file.gif> <file.h5>
-# CVE-2018-17437    h52gif <file.h5> <file.gif>
-# CVE-2018-17438    gif2h5 <file.gif> <file.h5>
-# CVE-2018-17439    gif2h5 <file.gif> <file.h5>
-# CVE-2019-8396     h5dump <file.h5>
-# CVE-2019-8397     h5repack <file1.h5> <file2.h5>
-# CVE-2019-8398     h5repack <file1.h5> <file2.h5>
-# CVE-2019-9151     h5repack <file1.h5> <file2.h5>
-# CVE-2019-9152     h5dump <file.h5>
-# CVE-2020-10809    gif2h5 <file.gif> <file.h5>
-# CVE-2020-10810    h5clear -s -m <file.h5>
-# CVE-2020-10811    h5dump -r -d BAG_root/metadata <file.h5>
-# CVE-2020-10812    h5debug <file.h5>
-# CVE-2021-31009    Not an HDF5-specific issue
-# CVE-2021-36977    libFuzzer?
-# CVE-2021-37501    h5dump <file.h5>
-# CVE-2021-45829    h5stat <file.h5>
-# CVE-2021-45830    h5format_convert -n <file.h5>
-# CVE-2021-45832    h5format_convert -n <file.h5>
-# CVE-2021-45833    h5dump <file.h5>
-# CVE-2021-46242    h5format_convert <file.h5>
-# CVE-2021-46243    h5ls <file.h5>
-# CVE-2021-46244    h5format_convert <file.h5>
-# CVE-2022-25942    gif2h5 <file.gif> <file.h5>
-# CVE-2022-25972    gif2h5 <file.gif> <file.h5>
-# CVE-2022-26061    gif2h5 <file.gif> <file.h5>
-
-GIF2H5_TEST_FILES="
-cve-2018-17433.h5
-cve-2018-17436.h5
-cve-2018-17438.h5
-cve-2018-17439.h5
-cve-2020-10809.h5
-cve-2022-25942.h5
-cve-2022-25972.h5
-cve-2022-26061.h5
-"
-
+# All of the CVE files are tested against the following tools:
+#    h5dump, h5debug, h5ls, h5repack, and h5stat
+# without any options.
+#
+# Then a number of the CVE files are then tested against the tools and
+# options as specified in the CVE reports.  See the README file in the
+# directory cvefiles/ for details.
 CVE_TEST_FILES="
 cve-2016-4330.h5
 cve-2016-4331.h5
@@ -259,6 +210,17 @@ cve-2024-0112-001.h5
 cve-2024-0116-001.h5
 "
 
+GIF2H5_TEST_FILES="
+cve-2018-17433.h5
+cve-2018-17436.h5
+cve-2018-17438.h5
+cve-2018-17439.h5
+cve-2020-10809.h5
+cve-2022-25942.h5
+cve-2022-25972.h5
+cve-2022-26061.h5
+"
+
 # Checks return value and display appropriate message
 CHECK_RET() {
 
@@ -290,17 +252,17 @@ CHECK_RET() {
 TEST_TOOL_2FILES() {
 
     infile=$1
-    repacked_file=$2
     base=$(basename "$1" .exp)
-    tool=$H5REPACK
+    repacked_file=$2
+    tool=$3
     toolbase=$(basename "$tool")
     shift
     shift
-
+    shift
     echo -ne "$base\t\t\t"
 
     # Store actual output in a file for inspection and reducing clutter on screen
-    outfile="$toolbase-$base.out"
+    output="$toolbase-$base.out"
 
     # Run test, redirecting stderr and stdout to the output file
     (
@@ -319,7 +281,7 @@ TEST_TOOL_2FILES() {
             exit $RET
         fi
 
-    ) > "$outdir/$outfile" 2>&1
+    ) > "$outdir/$output" 2>&1
 
     RET=$?
 
@@ -341,7 +303,7 @@ TEST_TOOL() {
     shift
 
     # Store actual output in a file for inspection and reducing clutter on screen
-    outfile="$toolbase-$base.out"
+    output="$toolbase-$base.out"
 
     # Run test, redirecting stderr and stdout to the output file
     (
@@ -361,7 +323,7 @@ TEST_TOOL() {
             exit $RET
         fi
 
-    ) > "$outdir/$outfile" 2>&1
+    ) > "$outdir/$output" 2>&1
 
     RET=$?
 
@@ -435,7 +397,7 @@ done
 # Test h5dump with options on affected CVE files
 TEST_H5DUMP() {
     echo ""
-    echo "     === h5dump on affected files ==="
+    echo " === h5dump on affected files ==="
     testfile="cve-2018-17233.h5"
     TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5DUMP" -r -d BAG_root/metadata
     testfile="cve-2020-10811.h5"
@@ -445,7 +407,7 @@ TEST_H5DUMP() {
 # Test h5repack with options on affected CVE file
 TEST_H5REPACK() {
     echo ""
-    echo "     === h5repack on affected files ==="
+    echo " === h5repack on affected files ==="
     testfile="cve-2018-17434.h5"
     TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile" "$H5REPACK" -f GZIP=8 -l dset1:CHUNK=5x6
 }
@@ -453,33 +415,43 @@ TEST_H5REPACK() {
 # Test h5stat with options on affected CVE file
 TEST_H5STAT() {
     echo ""
-    echo "     === h5stat on affected files ==="
+    echo " === h5stat on affected files ==="
     testfile="cve-2018-11207.h5"
     TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5STAT" -A -T -G -D -S
 }
 
 # Test h52gif on affected CVE files
 TEST_H52GIF() {
-    echo ""
-    echo "     === h52gif on affected files ==="
-    TEST_TOOL "$CVE_H5_FILES_DIR/cve-2018-17435.h5" $H52GIF image1.gif -i image
-    TEST_TOOL "$CVE_H5_FILES_DIR/cve-2018-17437.h5" $H52GIF image1.gif
+    if [ $SKIP_H52GIF -eq 0 ]; then
+        echo ""
+        echo " === h52gif is not available, skip the tests ==="
+    else
+        echo ""
+        echo " === h52gif on affected files ==="
+        TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/cve-2018-17435.h5" $H52GIF cve-2018-17435.gif -i image
+        TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/cve-2018-17437.h5" $H52GIF cve-2018-17437.gif
+    fi
 }
 
 # Test gif2h5 on affected CVE files
 TEST_GIF2H5() {
-    echo ""
-    echo "     === gif2h5 on affected files ==="
-    for testfile in $GIF2H5_TEST_FILES
-    do
-        TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/$testfile" "$outdir/out_$testfile"
-    done
+    if [ $SKIP_GIF2H5 -eq 0 ]; then
+        echo ""
+        echo " === gif2h5 is not available, skip the tests ==="
+    else
+        echo ""
+        echo " === gif2h5 on affected files ==="
+        for testfile in $GIF2H5_TEST_FILES
+        do
+            TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/$testfile" "$outdir/out_$testfile"
+        done
+    fi
 }
 
 # Test h5format_convert on affected CVE files
 TEST_H5FORMAT_CONVERT() {
     echo ""
-    echo "     === h5format_convert on affected files ==="
+    echo " === h5format_convert on affected files ==="
 
     testfile="cve-2021-45830.h5"
     TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5FORMAT_CONVERT" -n
@@ -494,7 +466,7 @@ TEST_H5FORMAT_CONVERT() {
 # Test h5clear on affected CVE files
 TEST_H5CLEAR() {
     echo ""
-    echo "     === h5clear on affected files ==="
+    echo " === h5clear on affected files ==="
     testfile="cve-2020-10810.h5"
     TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5CLEAR" -s -m
 }
