@@ -80,82 +80,13 @@ H5STAT=$bindir/h5stat
 # Location of CVE files
 CVE_H5_FILES_DIR=cvefiles
 
-# How are the CVE issues tested?
-# CVE-2017-17505    h5dump <file.h5>
-# CVE-2017-17506    h5dump <file.h5>
-# CVE-2017-17507    h5dump <file.h5>
-# CVE-2017-17508    h5dump <file.h5>
-# CVE-2017-17509    h5dump <file.h5>
-# CVE-2018-11202    h5dump <file.h5>
-# CVE-2018-11203    h5dump <file.h5>
-# CVE-2018-11204    h5dump <file.h5>
-# CVE-2018-11205    h5dump <file.h5>
-# CVE-2018-11206    h5dump <file.h5>
-# CVE-2018-11207    h5stat -A -T -G -D -S <file.h5>
-# CVE-2018-13866    h5dump <file.h5>
-# CVE-2018-13867    h5dump <file.h5>
-# CVE-2018-13868    h5dump <file.h5>
-# CVE-2018-13869    h5dump <file.h5>
-# CVE-2018-13870    h5dump <file.h5>
-# CVE-2018-13871    h5dump <file.h5>
-# CVE-2018-13872    h5dump <file.h5>
-# CVE-2018-13873    h5dump <file.h5>
-# CVE-2018-13874    h5dump <file.h5>
-# CVE-2018-13875    h5dump <file.h5>
-# CVE-2018-13876    h5dump <file.h5>
-# CVE-2018-14031    h5dump <file.h5>
-# CVE-2018-14033    h5dump <file.h5>
-# CVE-2018-14034    h5dump <file.h5>
-# CVE-2018-14035    h5dump <file.h5>
-# CVE-2018-14460    h5dump <file.h5>
-# CVE-2018-15671    h5dump <file.h5>
-# CVE-2018-15672    h5dump <file.h5>
-# CVE-2018-16438    h5dump <file.h5>
-# CVE-2018-17233    h5dump -r -d BAG_root/metadata <file.h5>
-# CVE-2018-17234    h5dump <file.h5>
-# CVE-2018-17237    h5dump <file.h5>
-# CVE-2018-17432    h5repack <file1.h5> <file2.h5>
-# CVE-2018-17433    gif2h5 <file.gif> <file.h5>
-# CVE-2018-17434    h5repack -f GZIP=8 -l dset1:CHUNK=5x6 <file1.h5> <file2.h5>
-# CVE-2018-17435    h52gif <file.gif> image1.gif -i image
-# CVE-2018-17436    gif2h5 <file.gif> <file.h5>
-# CVE-2018-17437    h52gif <file.h5> <file.gif>
-# CVE-2018-17438    gif2h5 <file.gif> <file.h5>
-# CVE-2018-17439    gif2h5 <file.gif> <file.h5>
-# CVE-2019-8396     h5dump <file.h5>
-# CVE-2019-8397     h5repack <file1.h5> <file2.h5>
-# CVE-2019-8398     h5repack <file1.h5> <file2.h5>
-# CVE-2019-9151     h5repack <file1.h5> <file2.h5>
-# CVE-2019-9152     h5dump <file.h5>
-# CVE-2020-10809    gif2h5 <file.gif> <file.h5>
-# CVE-2020-10810    h5clear -s -m <file.h5>
-# CVE-2020-10811    h5dump -r -d BAG_root/metadata <file.h5>
-# CVE-2020-10812    h5debug <file.h5>
-# CVE-2021-31009    Not an HDF5-specific issue
-# CVE-2021-36977    libFuzzer?
-# CVE-2021-37501    h5dump <file.h5>
-# CVE-2021-45829    h5stat <file.h5>
-# CVE-2021-45830    h5format_convert -n <file.h5>
-# CVE-2021-45832    h5format_convert -n <file.h5>
-# CVE-2021-45833    h5dump <file.h5>
-# CVE-2021-46242    h5format_convert <file.h5>
-# CVE-2021-46243    h5ls <file.h5>
-# CVE-2021-46244    h5format_convert <file.h5>
-# CVE-2022-25942    gif2h5 <file.gif> <file.h5>
-# CVE-2022-25972    gif2h5 <file.gif> <file.h5>
-# CVE-2022-26061    gif2h5 <file.gif> <file.h5>
-
-GIF2H5_TEST_FILES="
-cve-2018-17433.h5
-cve-2018-17436.h5
-cve-2018-17438.h5
-cve-2018-17439.h5
-cve-2020-10809.h5
-cve-2022-25942.h5
-cve-2022-25972.h5
-cve-2022-26061.h5
-"
-
+# All of the CVE files are tested against the following tools:
+#    h5dump, h5debug, h5ls, h5repack, and h5stat
+# without any options.
+#
+# Then a number of the CVE files are then tested against the tools and
+# options as specified in the CVE reports.  See the README file in the
+# directory cvefiles/ for details.
 CVE_TEST_FILES="
 cve-2016-4330.h5
 cve-2016-4331.h5
@@ -257,6 +188,17 @@ cve-2023-1208-002.h5
 cve-2024-0111-001.h5
 cve-2024-0112-001.h5
 cve-2024-0116-001.h5
+"
+
+GIF2H5_TEST_FILES="
+cve-2018-17433.h5
+cve-2018-17436.h5
+cve-2018-17438.h5
+cve-2018-17439.h5
+cve-2020-10809.h5
+cve-2022-25942.h5
+cve-2022-25972.h5
+cve-2022-26061.h5
 "
 
 # Checks return value and display appropriate message
