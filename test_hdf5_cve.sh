@@ -210,7 +210,12 @@ cve-2018-17433
 cve-2018-17436
 cve-2018-17438
 cve-2018-17439
-cve-2020-10809
+"
+
+H5FORMAT_CONVERT_TEST_FILES="
+cve-2021-45830.h5
+cve-2021-46242.h5
+cve-2021-46244.h5
 "
 
 # Checks return value and display appropriate message
@@ -243,22 +248,24 @@ CHECK_RET() {
 # then report PASSED or FAILED
 TEST_TOOL_2FILES() {
 
-    infile=$1
-    outfile=$2
-    tool=$3
+    tool=$1
+    infile=$2
+    outfile=$3
+    base=$(basename "$infile" .exp)
+    toolbase=$(basename "$tool")
     shift
     shift
     shift
     echo -ne "$base\t\t\t"
 
     # Store actual output in a file for inspection and reducing clutter on screen
-    output="$base.out"
+    resultfile="$toolbase-$base.out"
 
     # Run test, redirecting stderr and stdout to the output file
     (
         # Run using timeout to detect infinite loops.
         # Timeout returns 124 when the timeout has been exceeded.
-        timeout 10 $H5REPACK "$@" "$infile" "$outfile"
+        timeout 10 $tool "$@" "$infile" "$outfile"
 
         RET=$?
 
@@ -271,7 +278,7 @@ TEST_TOOL_2FILES() {
             exit $RET
         fi
 
-    ) > "$outdir/$output" 2>&1
+    ) > "$outdir/$resultfile" 2>&1
 
     RET=$?
 
@@ -284,22 +291,22 @@ TEST_TOOL_2FILES() {
 # Run user-provided tool on a given CVE file and report PASSED or FAILED
 TEST_TOOL() {
 
-    infile=$1
-    base=$(basename "$1" .exp)
-    tool=$2
+    tool=$1
+    infile=$2
+    base=$(basename "$infile" .exp)
+    toolbase=$(basename "$tool")
     echo -ne "$base\t\t\t"
     shift
     shift
 
     # Store actual output in a file for inspection and reducing clutter on screen
-    output="$base.out"
+    resultfile="$toolbase-$base.out"
 
     # Run test, redirecting stderr and stdout to the output file
     (
         # Run using timeout to detect infinite loops.
         # Timeout returns 124 when the timeout has been exceeded.
         timeout 10 $tool "$@" "$infile"
-        # timeout 10 $tool "$infile"
 
         RET=$?
 
@@ -312,7 +319,7 @@ TEST_TOOL() {
             exit $RET
         fi
 
-    ) > "$outdir/$output" 2>&1
+    ) > "$outdir/$resultfile" 2>&1
 
     RET=$?
 
@@ -336,7 +343,7 @@ echo "  === h5dump on all files ==="
 echo ""
 for testfile in $CVE_TEST_FILES
 do
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5DUMP"
+    TEST_TOOL "$H5DUMP" "$CVE_H5_FILES_DIR/$testfile"
 done
 
 # Run h5debug on each CVE file
@@ -345,7 +352,7 @@ echo "  === h5debug on all files ==="
 echo ""
 for testfile in $CVE_TEST_FILES
 do
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5DEBUG"
+    TEST_TOOL "$H5DEBUG" "$CVE_H5_FILES_DIR/$testfile"
 done
 
 # Run h5ls on each CVE file
@@ -354,8 +361,7 @@ echo "  === h5ls on all files ==="
 echo ""
 for testfile in $CVE_TEST_FILES
 do
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5LS"
-#    TEST_H5LS "$CVE_H5_FILES_DIR/$testfile"
+    TEST_TOOL "$H5LS" "$CVE_H5_FILES_DIR/$testfile"
 done
 
 # Run h5repack on each CVE file
@@ -364,7 +370,7 @@ echo "  === h5repack on all files ==="
 echo ""
 for testfile in $CVE_TEST_FILES
 do
-    TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile"
+    TEST_TOOL_2FILES "$H5REPACK" "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile"
 done
 
 # Run h5stat on each CVE file
@@ -373,7 +379,7 @@ echo "  === h5stat on all files ==="
 echo ""
 for testfile in $CVE_TEST_FILES
 do
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5STAT"
+    TEST_TOOL "$H5STAT" "$CVE_H5_FILES_DIR/$testfile"
 done
 
 ##############################################################################
@@ -388,9 +394,9 @@ TEST_H5DUMP() {
     echo ""
     echo " === h5dump on affected files ==="
     testfile="cve-2018-17233.h5"
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5DUMP" -r -d BAG_root/metadata
+    TEST_TOOL "$H5DUMP" "$CVE_H5_FILES_DIR/$testfile" -r -d BAG_root/metadata
     testfile="cve-2020-10811.h5"
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5DUMP" -r -d BAG_root/metadata
+    TEST_TOOL "$H5DUMP" "$CVE_H5_FILES_DIR/$testfile" -r -d BAG_root/metadata
 }
 
 # Test h5repack with options on affected CVE file
@@ -398,7 +404,7 @@ TEST_H5REPACK() {
     echo ""
     echo " === h5repack on affected files ==="
     testfile="cve-2018-17434.h5"
-    TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile" "$H5REPACK" -f GZIP=8 -l dset1:CHUNK=5x6
+    TEST_TOOL_2FILES "$H5REPACK" "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile" -f GZIP=8 -l dset1:CHUNK=5x6
 }
 
 # Test h5stat with options on affected CVE file
@@ -406,7 +412,7 @@ TEST_H5STAT() {
     echo ""
     echo " === h5stat on affected files ==="
     testfile="cve-2018-11207.h5"
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5STAT" -A -T -G -D -S
+    TEST_TOOL "$H5STAT" "$CVE_H5_FILES_DIR/$testfile" "$H5STAT" -A -T -G -D -S
 }
 
 # Test h52gif on affected CVE files
@@ -417,8 +423,8 @@ TEST_H52GIF() {
     else
         echo ""
         echo " === h52gif on affected files ==="
-        TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/cve-2018-17435.h5" $H52GIF cve-2018-17435.gif -i image
-        TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/cve-2018-17437.h5" $H52GIF cve-2018-17437.gif
+        TEST_TOOL_2FILES $H52GIF "$CVE_H5_FILES_DIR/cve-2018-17435.h5" cve-2018-17435.gif -i image
+        TEST_TOOL_2FILES $H52GIF "$CVE_H5_FILES_DIR/cve-2018-17437.h5" cve-2018-17437.gif
     fi
 }
 
@@ -432,8 +438,12 @@ TEST_GIF2H5() {
         echo " === gif2h5 on affected files ==="
         for testfile in $GIF2H5_TEST_FILES
         do
-            TEST_TOOL_2FILES "$CVE_H5_FILES_DIR/$testfile" "$outdir/out_$testfile"
+            TEST_TOOL_2FILES "$GIF2H5" "$CVE_H5_FILES_DIR/$testfile" "$outdir/$testfile.h5"
         done
+
+        # with option
+        testfile="cve-2020-10809"
+        TEST_TOOL_2FILES "$GIF2H5" "$CVE_H5_FILES_DIR/$testfile" "$outdir/$testfile.h5" /dev/null
     fi
 }
 
@@ -442,14 +452,24 @@ TEST_H5FORMAT_CONVERT() {
     echo ""
     echo " === h5format_convert on affected files ==="
 
-    testfile="cve-2021-45830.h5"
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5FORMAT_CONVERT" -n
-    testfile="cve-2021-45832.h5"
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5FORMAT_CONVERT" -n
-    testfile="cve-2021-46242.h5"
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5FORMAT_CONVERT"
-    testfile="cve-2021-46244.h5"
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5FORMAT_CONVERT"
+    # This test can potentially modify a cve file, hence, make a copy of the
+    # files and use those instead
+    for testfile in $H5FORMAT_CONVERT_TEST_FILES
+    do
+        cp $CVE_H5_FILES_DIR/$testfile $CVE_H5_FILES_DIR/"$testfile"_copied
+    done
+
+    testfile="cve-2021-45830.h5_copied"
+    TEST_TOOL $H5FORMAT_CONVERT "$CVE_H5_FILES_DIR/$testfile" -n
+    testfile="cve-2021-46242.h5_copied"
+    TEST_TOOL $H5FORMAT_CONVERT "$CVE_H5_FILES_DIR/$testfile"
+    testfile="cve-2021-46244.h5_copied"
+    TEST_TOOL $H5FORMAT_CONVERT "$CVE_H5_FILES_DIR/$testfile"
+
+    for testfile in $H5FORMAT_CONVERT_TEST_FILES
+    do
+        rm $CVE_H5_FILES_DIR/"$testfile"_copied
+    done
 }
 
 # Test h5clear on affected CVE files
@@ -457,7 +477,7 @@ TEST_H5CLEAR() {
     echo ""
     echo " === h5clear on affected files ==="
     testfile="cve-2020-10810.h5"
-    TEST_TOOL "$CVE_H5_FILES_DIR/$testfile" "$H5CLEAR" -s -m
+    TEST_TOOL "$H5CLEAR" "$CVE_H5_FILES_DIR/$testfile" -s -m
 }
 
 # Run oddball tests
@@ -469,9 +489,9 @@ echo "========================================"
 TEST_H5DUMP
 TEST_H5REPACK
 TEST_H5STAT
-# TEST_H52GIF modified cve-2018-17437.h5
+TEST_H52GIF
 TEST_GIF2H5
-# TEST_H5FORMAT_CONVERT modified cve-2021-46244.h5
+TEST_H5FORMAT_CONVERT
 TEST_H5CLEAR
 
 # Report test results and exit
