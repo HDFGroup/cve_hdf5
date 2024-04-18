@@ -2,11 +2,11 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 
 | CVE_Issue_Number | Description |
 |---------|-------------|
-|[CVE-2024-0116-001](https://cve.mitre.org/cgi-bin/cvename.cgi?name=official_cve)| HDF5 library versions  <=1.14.3 contain a heap buffer overflow in H5D__scatter_mem resulting in causing denial of service or potential code execution. |
-|[CVE-2024-0112-001](https://cve.mitre.org/cgi-bin/cvename.cgi?name=official_cve)| HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5S__point_deserialize resulting in the corruption of the instruction pointer and causing denial of service or potential code execution. |
-|[CVE-2024-0111-001](https://cve.mitre.org/cgi-bin/cvename.cgi?name=official_cve)| HDF5 library versions  <=1.14.3 contain a heap buffer overflow in H5T__conv_struct_opt resulting in causing denial of service or potential code execution. |
-|[CVE-2023-1208-002](https://cve.mitre.org/cgi-bin/cvename.cgi?name=official_cve)| HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5O__mtime_new_encode resulting in the corruption of the instruction pointer and causing denial of service or potential code execution. |
-|[CVE-2023-1208-001](https://cve.mitre.org/cgi-bin/cvename.cgi?name=official_cve)| HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5O__layout_encode resulting in the corruption of the instruction pointer and causing denial of service or potential code execution. |
+|[CVE-2024-0116-001]()| HDF5 library versions  <=1.14.3 contain a heap buffer overflow in H5D__scatter_mem resulting in causing denial of service or potential code execution. |
+|[CVE-2024-0112-001]()| HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5S__point_deserialize resulting in the corruption of the instruction pointer and causing denial of service or potential code execution. |
+|[CVE-2024-0111-001]()| HDF5 library versions  <=1.14.3 contain a heap buffer overflow in H5T__conv_struct_opt resulting in causing denial of service or potential code execution. |
+|[CVE-2023-1208-002]()| HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5O__mtime_new_encode resulting in the corruption of the instruction pointer and causing denial of service or potential code execution. |
+|[CVE-2023-1208-001]()| HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5O__layout_encode resulting in the corruption of the instruction pointer and causing denial of service or potential code execution. |
 |[CVE-2024-32624](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-32624)| HDF5 library versions  <=1.14.3 contain a heap buffer overflow in H5O__dtype_encode_helper causing denial of service or potential code execution. |
 |[CVE-2024-32623](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-32623)| HDF5 library versions  <=1.14.3 contain a heap buffer overflow in H5VM_array_fill resulting in the corruption of the instruction pointer and causing denial of service or potential code execution. |
 |[CVE-2024-32622](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-32622)| HDF5 library versions  <=1.14.3 contain a heap buffer overflow in H5T__get_native_type resulting in the corruption of the instruction pointer and causing denial of service or potential code execution. |
