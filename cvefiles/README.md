@@ -2,11 +2,11 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 
 | CVE\_Issue\_Number | Tested? | File Source | Tool/API | Issue           |
 |--------------------|---------|-------------|----------|-----------------|
-|[CVE-2024-0116-001]()|Y|[cve-2024-0116-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-0116-001.h5)| h5dump <file.h5> | heap buffer overflow in H5D__scatter_mem |
-|[CVE-2024-0112-001]()|Y|[cve-2024-0112-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-0112-001.h5)| h5dump <file.h5> | heap buffer overflow in H5S__point_deserialize |
-|[CVE-2024-0111-001]()|Y|[cve-2024-0111-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-0111-001.h5)| h5dump <file.h5> | heap buffer overflow H5T__conv_struct_opt |
-|[CVE-2023-1208-002]()|Y|[cve-2023-1208-002.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1208-002.h5)| h5repack <file1.h5> <file2.h5> | heap buffer overflow in H5O__mtime_new_encode |
-|[CVE-2023-1208-001]()|Y|[cve-2023-1208-001.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2023-1208-001.h5)| h5repack <file1.h5> <file2.h5> | heap buffer overflow in H5O__layout_encode |
+|[CVE-2024-33877](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-33877)|Y|[cve-2024-33877.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-33877.h5)| h5dump <file.h5> | heap buffer overflow in H5D__scatter_mem |
+|[CVE-2024-33876](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-33876)|Y|[cve-2024-33876.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-33876.h5)| h5dump <file.h5> | heap buffer overflow in H5S__point_deserialize |
+|[CVE-2024-33875](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-33875)|Y|[cve-2024-33875.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-33875.h5)| h5dump <file.h5> | heap buffer overflow H5T__conv_struct_opt |
+|[CVE-2024-33874](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-33874)|Y|[cve-2024-33874.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-33874.h5)| h5repack <file1.h5> <file2.h5> | heap buffer overflow in H5O__mtime_new_encode |
+|[CVE-2024-33873](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-33873)|Y|[cve-2024-33873.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-33873.h5)| h5repack <file1.h5> <file2.h5> | heap buffer overflow in H5O__layout_encode |
 |[CVE-2024-32624](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-32624)|Y|[cve-2024-32624.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-32624.h5)| unspecified | Heap Buffer Overflow in H5O__dtype_encode_helper |
 |[CVE-2024-32623](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-32623)|Y|[cve-2024-32623.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-32623.h5)| h5dump <file.h5> | heap buffer overflow in H5VM_array_fill |
 |[CVE-2024-32622](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-32622)|Y|[cve-2024-32622.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2024-32622.h5)| h5dump <file.h5> | heap buffer overflow in H5T__get_native_type |
