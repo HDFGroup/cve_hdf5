@@ -50,6 +50,8 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 |[CVE-2021-37501](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-37501)|Y|[FILE](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2021-37501.h5)|
 |[CVE-2021-36977](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-36977)|Y|[LINK](https://bugs.chromium.org/p/oss-fuzz/issues/detail?id=31265)|
 |[CVE-2021-31009](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-31009)|N|This does not appear to be a specific HDF5 issue (6)| | |
+|[CVE-2024-32614](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-18494)|Y|[cve-2020-18494.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-18494.h5)| h5repack | |
+|[CVE-2024-32614](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-18232)|Y|[cve-2020-18232.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-18232.h5)| h5repack | |
 |[CVE-2020-10812](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10812)|Y|[h5_nrefs_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10812.h5) (7)| h5debug <file.h5> | |
 |[CVE-2020-10811](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10811)|Y|[h5dump_H5O__layout_decode_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10811.h5) (7)| h5dump -r -d BAG_root/metadata <file.h5> | |
 |[CVE-2020-10810](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-10810)|Y|[H5AC_unpin_entry_POC](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2020-10810.h5) (7)| h5clear -s -m <file.h5> | |
