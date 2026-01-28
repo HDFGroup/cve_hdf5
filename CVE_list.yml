@@ -1,0 +1,1264 @@
+---
+- title: HDF5-related CVE issues from cve.org
+  url: https://www.cve.org/CVERecord/SearchResults?query=hdf5
+  issues:
+    - id: CVE-2025-7069
+      url: https://www.cve.org/CVERecord?id=CVE-2025-7069
+      fix_releases:
+        - 2.0.0
+      commit_hash: 804f3bace997e416917b235dbd3beac3652a8a05
+      description: >-
+        A vulnerability, which was classified as problematic, was found in HDF5 1.14.6. Affected is
+        the function H5FS__sect_link_size of the file src/H5FSsection.c. The manipulation leads to
+        heap-based buffer overflow. It is possible to launch the attack on the local host.
+    - id: CVE-2025-7068
+      url: https://www.cve.org/CVERecord?id=CVE-2025-7068
+      fix_releases:
+        - 2.0.0
+      commit_hash: 7dd110251d67b2c8cfe48d2e7a0b21a2e0c06432
+      description: >-
+        A vulnerability, which was classified as problematic, has been found in HDF5 1.14.6. This
+        issue affects the function H5FL__malloc of the file src/H5FL.c. The manipulation leads to
+        memory leak. Attacking locally is a requirement.
+    - id: CVE-2025-7067
+      url: https://www.cve.org/CVERecord?id=CVE-2025-7067
+      fix_releases:
+        - 2.0.0
+      commit_hash: ea4b483d981b1c73ba2b8185c544565e4b05ae0e
+      description: >-
+        A vulnerability classified as problematic was found in HDF5 1.14.6. This vulnerability
+        affects the function H5FS__sinfo_serialize_node_cb of the file src/H5FScache.c. The
+        manipulation leads to heap-based buffer overflow. Local access is required to approach this
+        attack.
+    - id: CVE-2025-6858
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6858
+      fix_releases:
+        - 2.0.0
+      commit_hash: 7cc8b5e1010a09c892bc97ac32d9515c3777ce07
+      description: >-
+        A vulnerability was found in HDF5 1.14.6 and classified as problematic. Affected by this
+        issue is the function H5C__flush_single_entry of the file src/H5Centry.c. The manipulation
+        leads to null pointer dereference. The attack needs to be approached locally.
+    - id: CVE-2025-6857
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6857
+      fix_releases:
+        - 2.0.0
+      commit_hash: a8ceb1d95bb997f548c1129363dad53c18540096
+      description: >-
+        A vulnerability has been found in HDF5 1.14.6 and classified as problematic. Affected by
+        this vulnerability is the function H5G__node_cmp3 of the file src/H5Gnode.c. The
+        manipulation leads to stack-based buffer overflow. It is possible to launch the attack on
+        the local host.
+    - id: CVE-2025-6856
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6856
+      fix_releases:
+        - 2.0.0
+      commit_hash: 29c847a43db0cdc85b01cafa5a7613ea73932675
+      description: >-
+        A vulnerability, which was classified as problematic, was found in HDF5 1.14.6. Affected is
+        the function H5FL__reg_gc_list of the file src/H5FL.c. The manipulation leads to use after
+        free. Attacking locally is a requirement.
+    - id: CVE-2025-6818
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6818
+      fix_releases:
+        - 2.0.0
+      commit_hash: 29c847a43db0cdc85b01cafa5a7613ea73932675
+      description: >-
+        A vulnerability, which was classified as problematic, was found in HDF5 1.14.6. Affected is
+        the function H5O__chunk_protect of the file /src/H5Ochunk.c. The manipulation leads to
+        heap-based buffer overflow. An attack has to be approached locally.
+    - id: CVE-2025-6817
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6817
+      fix_releases:
+        - 2.0.0
+      commit_hash: 7cc8b5e1010a09c892bc97ac32d9515c3777ce07
+      description: >-
+        A vulnerability, which was classified as problematic, has been found in HDF5 1.14.6. This
+        issue affects the function H5C__load_entry of the file /src/H5Centry.c. The manipulation
+        leads to resource consumption. The attack needs to be approached locally.
+    - id: CVE-2025-6816
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6816
+      fix_releases:
+        - 2.0.0
+      commit_hash: 29c847a43db0cdc85b01cafa5a7613ea73932675
+      description: >-
+        A vulnerability classified as problematic was found in HDF5 1.14.6. This vulnerability
+        affects the function H5O__fsinfo_encode of the file /src/H5Ofsinfo.c. The manipulation leads
+        to heap-based buffer overflow. It is possible to launch the attack on the local host.
+    - id: CVE-2025-6750
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6750
+      fix_releases:
+        - 2.0.0
+      commit_hash: 86149a098837a37b2513746e9baf84010f75fb54
+      description: >-
+        A vulnerability, which was classified as problematic, has been found in HDF5 1.14.6.
+        Affected by this issue is the function H5O__mtime_new_encode of the file src/H5Omtime.c. The
+        manipulation leads to heap-based buffer overflow. Attacking locally is a requirement.
+    - id: CVE-2025-6516
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6516
+      fix_releases:
+        - 2.0.0
+      commit_hash: 3914bb7f7ec7105d8bfbeb3aebd92e867cff5b70
+      description: >-
+        A vulnerability has been found in HDF5 up to 1.14.6 and classified as critical. This
+        vulnerability affects the function H5F_addr_decode_len of the file /hdf5/src/H5Fint.c. The
+        manipulation leads to heap-based buffer overflow. An attack has to be approached locally.
+    - id: CVE-2025-6270
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6270
+      fix_releases:
+        - 2.0.0
+      commit_hash: 804f3bace997e416917b235dbd3beac3652a8a05
+      description: >-
+        A vulnerability, which was classified as critical, has been found in HDF5 up to 1.14.6.
+        Affected by this issue is the function H5FS__sect_find_node of the file H5FSsection.c. The
+        manipulation leads to heap-based buffer overflow. It is possible to launch the attack on the
+        local host.
+    - id: CVE-2025-6269
+      url: https://www.cve.org/CVERecord?id=CVE-2025-6269
+      fix_releases:
+        - 2.0.0
+      commit_hash: 3914bb7f7ec7105d8bfbeb3aebd92e867cff5b70
+      description: >-
+        A vulnerability classified as critical was found in HDF5 up to 1.14.6. Affected by this
+        vulnerability is the function H5C__reconstruct_cache_entry of the file H5Cimage.c. The
+        manipulation leads to heap-based buffer overflow. Attacking locally is a requirement.
+    - id: CVE-2025-44905
+      url: https://www.cve.org/CVERecord?id=CVE-2025-44905
+      fix_releases:
+        - 2.0.0
+      commit_hash: 42588aeba786a121fec1fbad72cf39d8f60a4983
+      description: >-
+        hdf5 v1.14.6 was discovered to contain a heap buffer overflow via the
+        H5Z__filter_scaleoffset function.
+    - id: CVE-2025-44904
+      url: https://www.cve.org/CVERecord?id=CVE-2025-44904
+      fix_releases:
+        - Outstanding
+      commit_hash: Outstanding
+      description: >-
+        hdf5 v1.14.6 was discovered to contain a heap buffer overflow via the H5VM_memcpyvv function.
+    - id: CVE-2025-2926
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2926
+      fix_releases:
+        - 2.0.0
+      commit_hash: d37b537ff256f0fa65cb4f82b20f286ad9a2e1e2
+      description: >-
+        A vulnerability was found in HDF5 up to 1.14.6 and classified as problematic. This issue
+        affects the function H5O__cache_chk_serialize of the file src/H5Ocache.c. The manipulation
+        leads to null pointer dereference. An attack has to be approached locally.
+    - id: CVE-2025-2925
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2925
+      fix_releases:
+        - 2.0.0
+      commit_hash: 4310c19608455c17a213383d07715efb2918defc
+      description: >-
+        A vulnerability has been found in HDF5 up to 1.14.6 and classified as problematic. This
+        vulnerability affects the function H5MM_realloc of the file src/H5MM.c. The manipulation of
+        the argument mem leads to double free. The attack needs to be approached locally.
+    - id: CVE-2025-2924
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2924
+      fix_releases:
+        - 2.0.0
+      commit_hash: 0a57195ca67d278f1cf7d01566c121048e337a59
+      description: >-
+        A vulnerability, which was classified as problematic, was found in HDF5 up to 1.14.6. This
+        affects the function H5HL__fl_deserialize of the file src/H5HLcache.c. The manipulation of
+        the argument free_block leads to heap-based buffer overflow. It is possible to launch the
+        attack on the local host.
+    - id: CVE-2025-2923
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2923
+      fix_releases:
+        - 2.0.0
+      commit_hash: 29c847a43db0cdc85b01cafa5a7613ea73932675
+      description: >-
+        A vulnerability, which was classified as problematic, has been found in HDF5 up to 1.14.6.
+        Affected by this issue is the function H5F_addr_encode_len of the file src/H5Fint.c. The
+        manipulation of the argument pp leads to heap-based buffer overflow. Attacking locally is a
+        requirement.
+    - id: CVE-2025-2915
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2915
+      fix_releases:
+        - 2.0.0
+      commit_hash: 26a76bafdef3a0950d348a08667de161a19b7c2c
+      description: >-
+        A vulnerability classified as problematic was found in HDF5 up to 1.14.6. This vulnerability
+        affects the function H5F__accum_free of the file src/H5Faccum.c. The manipulation of the
+        argument overlap_size leads to heap-based buffer overflow. Attacking locally is a
+        requirement.
+    - id: CVE-2025-2914
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2914
+      fix_releases:
+        - 2.0.0
+      commit_hash: 804f3bace997e416917b235dbd3beac3652a8a05
+      description: >-
+        A vulnerability classified as problematic has been found in HDF5 up to 1.14.6. This affects
+        the function H5FS__sinfo_Srialize_Sct_cb of the file src/H5FScache.c. The manipulation of
+        the argument sect leads to heap-based buffer overflow. Local access is required to approach
+        this attack.
+    - id: CVE-2025-2913
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2913
+      fix_releases:
+        - 2.0.0
+      commit_hash: 7cc8b5e1010a09c892bc97ac32d9515c3777ce07
+      description: >-
+        A vulnerability was found in HDF5 up to 1.14.6. It has been rated as critical. Affected by
+        this issue is the function H5FL__blk_gc_list of the file src/H5FL.c. The manipulation of the
+        argument H5FL_blk_head_t leads to use after free. An attack has to be approached locally.
+    - id: CVE-2025-2912
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2912
+      fix_releases:
+        - 2.0.0
+      commit_hash: 7cc8b5e1010a09c892bc97ac32d9515c3777ce07
+      description: >-
+        A vulnerability was found in HDF5 up to 1.14.6. It has been declared as problematic.
+        Affected by this vulnerability is the function H5O_msg_flush of the file src/H5Omessage.c.
+        The manipulation of the argument oh leads to heap-based buffer overflow. The attack needs to
+        be approached locally.
+    - id: CVE-2025-2310
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2310
+      fix_releases:
+        - 2.0.0
+      commit_hash: 6c86f97e03c6dc7d7bd2bae9acc422bdc3438ff4
+      description: >-
+        A vulnerability was found in HDF5 1.14.6 and classified as critical. This issue affects the
+        function H5MM_strndup of the component Metadata Attribute Decoder. The manipulation leads to
+        heap-based buffer overflow. Attacking locally is a requirement.
+    - id: CVE-2025-2309
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2309
+      fix_releases:
+        - 2.1.0
+      commit_hash: 9d90b21ef5c5373978014f1a711795aa653bd9a1
+      description: >-
+        A vulnerability has been found in HDF5 1.14.6 and classified as critical. This vulnerability
+        affects the function H5T__bit_copy of the component Type Conversion Logic. The manipulation
+        leads to heap-based buffer overflow. Local access is required to approach this attack.
+    - id: CVE-2025-2308
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2308
+      fix_releases:
+        - 2.1.0
+      commit_hash: 2ce7fdc4cf147d280aa6d49686297faacc250e40
+      description: >-
+        A vulnerability, which was classified as critical, was found in HDF5 1.14.6. This affects
+        the function H5Z__scaleoffset_decompress_one_byte of the component Scale-Offset Filter. The
+        manipulation leads to heap-based buffer overflow. An attack has to be approached locally.
+    - id: CVE-2025-2153
+      url: https://www.cve.org/CVERecord?id=CVE-2025-2153
+      fix_releases:
+        - 2.0.0
+      commit_hash: 38954615fc079538aa45d48097625a6d76aceef0
+      description: >-
+        A vulnerability, which was classified as critical, was found in HDF5 1.14.6. Affected is the
+        function H5SM_delete of the file H5SM.c of the component h5 File Handler. The manipulation
+        leads to heap-based buffer overflow. It is possible to launch the attack remotely. The
+        complexity of an attack is rather high. The exploitability is told to be difficult.
+    - id: CVE-2024-33877
+      url: https://www.cve.org/CVERecord?id=CVE-2024-33877
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5T__conv_struct_opt
+        resulting in causing denial of service or potential code execution.
+    - id: CVE-2024-33876
+      url: https://www.cve.org/CVERecord?id=CVE-2024-33876
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5S__point_deserialize
+        resulting in the corruption of the instruction pointer and causing denial of service or
+        potential code execution.
+    - id: CVE-2024-33875
+      url: https://www.cve.org/CVERecord?id=CVE-2024-33875
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5O__layout_encode
+        resulting in the corruption of the instruction pointer and causing denial of service or
+        potential code execution.
+    - id: CVE-2024-33874
+      url: https://www.cve.org/CVERecord?id=CVE-2024-33874
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5O__mtime_new_encode
+        resulting in the corruption of the instruction pointer and causing denial of service or
+        potential code execution.
+    - id: CVE-2024-33873
+      url: https://www.cve.org/CVERecord?id=CVE-2024-33873
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5D__scatter_mem resulting
+        in causing denial of service or potential code execution.
+    - id: CVE-2024-32624
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32624
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5T__ref_mem_setnull
+        resulting in the corruption of the instruction pointer and causing denial of service or
+        potential code execution.
+    - id: CVE-2024-32623
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32623
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5VM_array_fill resulting
+        in the corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-32622
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32622
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 versions <= 1.14.3 contain a out-of-bounds read operation in H5FL_arr_malloc resulting
+        in denial of service or potential code execution.
+    - id: CVE-2024-32621
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32621
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5HG_read resulting in the
+        corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-32620
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32620
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5F_addr_decode_len
+        resulting in the corruption of the instruction pointer and causing denial of service or
+        potential code execution.
+    - id: CVE-2024-32619
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32619
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5T_copy_reopen resulting
+        in the corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-32618
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32618
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5T__get_native_type
+        resulting in the corruption of the instruction pointer and causing denial of service or
+        potential code execution.
+    - id: CVE-2024-32617
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32617
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 versions <= 1.14.3 contain a heap buffer overflow caused by the unsafe use of strdup in
+        H5MM_xstrdup, resulting in denial of service or potential code execution
+    - id: CVE-2024-32616
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32616
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5O__dtype_encode_helper
+        causing denial of service or potential code execution.
+    - id: CVE-2024-32615
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32615
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 versions <= 1.14.3 contain a heap buffer overflow in H5Z__nbit_decompress_one_byte
+        caused by the earlier use of an initialized pointer.  This may result in Denial of Service
+        or potential code excution.
+    - id: CVE-2024-32614
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32614
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 heap buffer overflow in H5VM_memcpyvv which may result in
+        denial of service or code execution.
+    - id: CVE-2024-32613
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32613
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow flaw in the function
+        H5HL__fl_deserialize resulting in denial of service or potential code execution.
+    - id: CVE-2024-32612
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32612
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5HL__fl_deserialize
+        resulting in the corruption of the instruction pointer and causing denial of service or
+        potential code execution.
+    - id: CVE-2024-32611
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32611
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 may use an uninitialized value H5A__attr_release_table
+        resulting in denial of service.
+    - id: CVE-2024-32610
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32610
+      fix_releases:
+        - 1.14.4
+      commit_hash: ce53bc020d37e10a06a59501c45f1ab82539f0c5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5T__ref_mem_setnull
+        resulting in the corruption of the instruction pointer and causing denial of service or
+        potential code execution.
+    - id: CVE-2024-32609
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32609
+      fix_releases:
+        - 1.14.4
+      commit_hash: 372381c530275a1616dce487cc578b19c4812163
+      description: >-
+        HDF5 library versions <=1.14.3 contains a stack overflow in the function H5E_printf_stack
+        resulting in denial of service or potential code execution.
+    - id: CVE-2024-32608
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32608
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions  <=1.14.3 contain a memory corruption in H5A__close resulting in the
+        corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-32607
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32607
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a SEGV in H5A__close in H5Aint.c, resulting in the corruption
+        of the instruction pointer.
+    - id: CVE-2024-32606
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32606
+      fix_releases:
+        - 1.14.4
+      commit_hash: null
+      description: >-
+        HDF5 library versions <=1.14.3 may attempt to dereference uninitialized values in
+        h5tools_str_sprint, which will lead to denial of service.
+    - id: CVE-2024-32605
+      url: https://www.cve.org/CVERecord?id=CVE-2024-32605
+      fix_releases:
+        - 1.14.4
+      commit_hash: null
+      description: >-
+        HDF5 library versions <=1.14.3 contain a stack buffer overflow in H5VM_memcpyvv resulting in
+        the corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-29166
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29166
+      fix_releases:
+        - 1.14.4
+      commit_hash: null
+      description: >-
+        HDF5 library versions <=1.14.3 contain a buffer overrun in H5O__linfo_decode resulting in
+        the corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-29165
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29165
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a buffer overrun in H5Z__filter_fletcher32 resulting
+        in the corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-29164
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29164
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a stack buffer overflow in H5R__decode_heap resulting
+        in the corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-29163
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29163
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5T__bit_find resulting in
+        the corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-29162
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29162
+      fix_releases:
+        - 1.14.4
+      fix_release_confidence: tentative
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 versions <= 1.13.3 and/or 1.14.2 contain a stack buffer overflow in H5HG_read resulting
+        in denial of service or potential code execution.
+    - id: CVE-2024-29161
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29161
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5A__attr_release_table
+        resulting in the corruption of the instruction pointer and causing denial of service or
+        potential code execution.
+      notes:
+        - >-
+          HDF5 library versions <=1.14.3 contain a stack buffer overflow in H5FL_arr_malloc
+          resulting in the corruption of the instruction pointer and causing denial of service or
+          potential code execution.
+    - id: CVE-2024-29160
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29160
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in
+        H5HG__cache_heap_deserialize resulting in the corruption of the instruction pointer and
+        causing denial of service or potential code execution.
+    - id: CVE-2024-29159
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29159
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a buffer overrun in H5Z__filter_scaleoffset resulting
+        in the corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-29158
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29158
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a stack buffer overflow in H5FL_arr_malloc resulting
+        in the corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2024-29157
+      url: https://www.cve.org/CVERecord?id=CVE-2024-29157
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        HDF5 library versions <=1.14.3 contain a heap buffer overflow in H5HG_read resulting in the
+        corruption of the instruction pointer and causing denial of service or potential code
+        execution.
+    - id: CVE-2022-26061
+      url: https://www.cve.org/CVERecord?id=CVE-2022-26061
+      fix_releases:
+        - 2.0.0 (tool removed)
+      commit_hash: bb5661101a85984ce72835c167874f96279720f7
+      description: >-
+        A heap-based buffer overflow vulnerability exists in the gif2h5 functionality of HDF5 Group
+        libhdf5 1.10.4. A specially-crafted GIF file can lead to code execution. An attacker can
+        provide a malicious file to trigger this vulnerability.
+      notes:
+        - Tool removed.
+    - id: CVE-2022-25972
+      url: https://www.cve.org/CVERecord?id=CVE-2022-25972
+      fix_releases:
+        - 2.0.0 (tool removed)
+      commit_hash: 0a7f89d5ad984d49ca64be9c773143eceaf49b77
+      description: >-
+        An out-of-bounds write vulnerability exists in the gif2h5 functionality of HDF5 Group
+        libhdf5 1.10.4. A specially-crafted GIF file can lead to code execution. An attacker can
+        provide a malicious file to trigger this vulnerability.
+      notes:
+        - Tool removed.
+    - id: CVE-2022-25942
+      url: https://www.cve.org/CVERecord?id=CVE-2022-25942
+      fix_releases:
+        - 2.0.0 (tool removed)
+      commit_hash: bb5661101a85984ce72835c167874f96279720f7
+      description: >-
+        read vulnerability exists in the gif2h5 functionality of HDF5 Group libhdf5 1.10.4. A
+        specially-crafted GIF file can lead to code execution. An attacker can provide a malicious
+        file to trigger this vulnerability.
+      notes:
+        - Tool removed.
+    - id: CVE-2021-46244
+      url: https://www.cve.org/CVERecord?id=CVE-2021-46244
+      fix_releases:
+        - 1.14.0
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 0b4e9cf976438f0a6df7719518d1b1bb96c2caca
+      description: >-
+        A Divide By Zero vulnerability exists in HDF5 v1.13.1-1 vis the function H5T__complete_copy
+        () at /hdf5/src/H5T.c. This vulnerability causes an aritmetic exception, leading to a Denial
+        of Service (DoS).
+    - id: CVE-2021-46243
+      url: https://www.cve.org/CVERecord?id=CVE-2021-46243
+      fix_releases:
+        - 1.14.0
+        - 1.12.3
+        - 1.10.11
+      fix_release_confidence: tentative
+      commit_hash: 0f94940f1a9ae95de38b70709eb413511b76c73b
+      description: >-
+        An untrusted pointer dereference vulnerability exists in HDF5 v1.13.1-1 via the function
+        H5O__dtype_decode_helper () at hdf5/src/H5Odtype.c. This vulnerability can lead to a Denial
+        of Service (DoS).
+    - id: CVE-2021-46242
+      url: https://www.cve.org/CVERecord?id=CVE-2021-46242
+      fix_releases:
+        - 1.14.0
+      commit_hash: 24700e8f0607e9a3782c843528e2c5a892d4d6f6
+      description: >-
+        HDF5 v1.13.1-1 was discovered to contain a heap-use-after free via the component
+        H5AC_unpin_entry.
+    - id: CVE-2021-45833
+      url: https://www.cve.org/CVERecord?id=CVE-2021-45833
+      fix_releases:
+        - 1.14.0
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 4e0277c35a5a6e8eb84058a905efa06bb3915985
+      description: >-
+        A Stack-based Buffer Overflow Vulnerability exists in HDF5 1.13.1-1 via the
+        H5D__create_chunk_file_map_hyper function in /hdf5/src/H5Dchunk.c, which causes a Denial of
+        Service (context-dependent).
+    - id: CVE-2021-45832
+      url: https://www.cve.org/CVERecord?id=CVE-2021-45832
+      fix_releases: null
+      status: cannot_reproduce
+      commit_hash: null
+      description: >-
+        A Stack-based Buffer Overflow Vulnerability exists in HDF5 1.13.1-1 at at hdf5/src/H5Eint.c,
+        which causes a Denial of Service (context-dependent).
+      notes:
+        - Issue could not be reproduced.
+        - Commit hash not applicable.
+    - id: CVE-2021-45830
+      url: https://www.cve.org/CVERecord?id=CVE-2021-45830
+      fix_releases:
+        - 1.14.0
+      commit_hash: 659bc99fd139e16fdf47b31b635f158b72e3f5a4
+      description: >-
+        A heap-based buffer overflow vulnerability exists in HDF5 1.13.1-1 via H5F_addr_decode_len
+        in /hdf5/src/H5Fint.c, which could cause a Denial of Service.
+    - id: CVE-2021-45829
+      url: https://www.cve.org/CVERecord?id=CVE-2021-45829
+      fix_releases:
+        - 1.14.0
+      commit_hash: a45ade88863e7e413ec408cdc62d60a1c1bc76a2
+      description: 'HDF5 1.13.1-1 is affected by: segmentation fault, which causes a Denial of Service.'
+    - id: CVE-2021-37501
+      url: https://www.cve.org/CVERecord?id=CVE-2021-37501
+      fix_releases:
+        - 1.14.1
+        - 1.12.3
+        - 1.10.11
+      commit_hash: b16ec83d4bd79f9ffaad85de16056419f3532887
+      description: >-
+        Buffer Overflow vulnerability in HDFGroup hdf5-h5dump 1.12.0 through 1.13.0 allows attackers
+        to cause a denial of service via h5tools_str_sprint in /hdf5/tools/lib/h5tools_str.c.
+    - id: CVE-2021-36977
+      url: https://www.cve.org/CVERecord?id=CVE-2021-36977
+      fix_releases: null
+      status: not_filed_against_hdf5
+      commit_hash: null
+      description: >-
+        matio (aka MAT File I/O Library) 1.5.20 and 1.5.21 has a heap-based buffer overflow in
+        H5MM_memcpy (called from H5MM_malloc and H5C_load_entry), related to use of HDF5 1.12.0.
+      notes:
+        - Issue not filed against HDF5.
+        - Commit hash not applicable.
+    - id: CVE-2021-31009
+      url: https://www.cve.org/CVERecord?id=CVE-2021-31009
+      fix_releases: null
+      status: not_filed_against_hdf5
+      commit_hash: null
+      description: >-
+        Multiple issues were addressed by removing HDF5. This issue is fixed in iOS 15.2 and iPadOS
+        15.2, macOS Monterey 12.1. Multiple issues in HDF5.
+      notes:
+        - Issue not filed against HDF5.
+        - Commit hash not applicable.
+    - id: CVE-2020-18494
+      url: https://www.cve.org/CVERecord?id=CVE-2020-18494
+      fix_releases:
+        - 1.14.1
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 1c1af33a126e66640c2c2f100f743bd8b8fc07da
+      description: >-
+        Buffer Overflow vulnerability in function H5S_close in H5S.c in HDF5 1.10.4 allows remote
+        attackers to run arbitrary code via creation of crafted file.
+    - id: CVE-2020-18232
+      url: https://www.cve.org/CVERecord?id=CVE-2020-18232
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.6
+      commit_hash: 5098894ffde76620db2798fba900287aaf518166
+      description: >-
+        Buffer Overflow vulnerability in function H5S_close in H5S.c in HDF5 1.10.4 allows remote
+        attackers to run arbitrary code via creation of crafted file.
+    - id: CVE-2020-10812
+      url: https://www.cve.org/CVERecord?id=CVE-2020-10812
+      fix_releases:
+        - 1.14.0
+        - 1.12.3
+        - 1.10.11
+      commit_hash: a9036005c3916e6fda0296026323f00d043300f8
+      description: >-
+        An issue was discovered in HDF5 through 1.12.0. A NULL pointer dereference exists in the
+        function H5F_get_nrefs() located in H5Fquery.c. It allows an attacker to cause Denial of
+        Service.
+    - id: CVE-2020-10811
+      url: https://www.cve.org/CVERecord?id=CVE-2020-10811
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.9
+        - 1.8.23
+      commit_hash: dafc7285bb1df4a6529a64c215c5de4017016d24
+      description: >-
+        An issue was discovered in HDF5 through 1.12.0. A heap-based buffer over-read exists in the
+        function H5O__layout_decode() located in H5Olayout.c. It allows an attacker to cause Denial
+        of Service.
+    - id: CVE-2020-10810
+      url: https://www.cve.org/CVERecord?id=CVE-2020-10810
+      fix_releases:
+        - 1.14.0
+        - 1.12.2
+        - 1.10.9
+      commit_hash: b5c66529e9709839f336d2b6f0d453139a0744b5
+      description: >-
+        An issue was discovered in HDF5 through 1.12.0. A NULL pointer dereference exists in the
+        function H5AC_unpin_entry() located in H5AC.c. It allows an attacker to cause Denial of
+        Service.
+    - id: CVE-2020-10809
+      url: https://www.cve.org/CVERecord?id=CVE-2020-10809
+      fix_releases:
+        - 2.0.0 (tool removed)
+      commit_hash: bb5661101a85984ce72835c167874f96279720f7
+      description: >-
+        An issue was discovered in HDF5 through 1.12.0. A heap-based buffer overflow exists in the
+        function Decompress() located in decompress.c. It can be triggered by sending a crafted file
+        to the gif2h5 binary. It allows an attacker to cause Denial of Service.
+    - id: CVE-2019-9152
+      url: https://www.cve.org/CVERecord?id=CVE-2019-9152
+      fix_releases:
+        - 1.14.0
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 0f94940f1a9ae95de38b70709eb413511b76c73b
+      description: >-
+        An issue was discovered in the HDF HDF5 1.10.4 library. There is an out of bounds read in
+        the function H5MM_xstrdup in H5MM.c when called from H5O_dtype_decode_helper in H5Odtype.c.
+    - id: CVE-2019-9151
+      url: https://www.cve.org/CVERecord?id=CVE-2019-9151
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.9
+        - 1.8.23
+      commit_hash: dafc7285bb1df4a6529a64c215c5de4017016d24
+      description: >-
+        An issue was discovered in the HDF HDF5 1.10.4 library. There is an out of bounds read in
+        the function H5VM_memcpyvv in H5VM.c when called from H5D__compact_readvv in H5Dcompact.c.
+    - id: CVE-2019-8398
+      url: https://www.cve.org/CVERecord?id=CVE-2019-8398
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.7
+      commit_hash: null
+      description: >-
+        An issue was discovered in the HDF HDF5 1.10.4 library. There is an out of bounds read in
+        the function H5T_get_size in H5T.c.
+    - id: CVE-2019-8397
+      url: https://www.cve.org/CVERecord?id=CVE-2019-8397
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.7
+      commit_hash: null
+      description: >-
+        An issue was discovered in the HDF HDF5 1.10.4 library. There is an out of bounds read in
+        the function H5T_close_real in H5T.c.
+    - id: CVE-2019-8396
+      url: https://www.cve.org/CVERecord?id=CVE-2019-8396
+      fix_releases:
+        - 1.14.0
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 18c438bdf0be8ad98f968bb77b327d7a3f17a3f5
+      description: >-
+        A buffer overflow in H5O__layout_encode in H5Olayout.c in the HDF HDF5 through 1.10.4
+        library allows attackers to cause a denial of service via a crafted HDF5 file. This issue
+        was triggered while repacking an HDF5 file, aka "Invalid write of size 2."
+    - id: CVE-2018-17439
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17439
+      fix_releases:
+        - 1.14.0
+      commit_hash: 99487d9e45c8245a829f18a060fa472d0422edbb
+      description: >-
+        An issue was discovered in the HDF HDF5 1.10.3 library. There is a stack-based buffer
+        overflow in the function H5S_extent_get_dims() in H5S.c. Specifically, this issue occurs
+        while converting an HDF5 file to a GIF file.
+    - id: CVE-2018-17438
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17438
+      fix_releases:
+        - 2.0.0 (tool removed)
+      commit_hash: bb5661101a85984ce72835c167874f96279720f7
+      description: >-
+        A SIGFPE signal is raised in the function H5D__select_io() of H5Dselect.c in the HDF HDF5
+        through 1.10.3 library during an attempted parse of a crafted HDF file, because of incorrect
+        protection against division by zero. It could allow a remote denial of service attack.
+    - id: CVE-2018-17437
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17437
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.5
+      commit_hash: bc3d878add940845a2ec5b8873f2d45a00926ce8
+      description: >-
+        Memory leak in the H5O_dtype_decode_helper() function in H5Odtype.c in the HDF HDF5 through
+        1.10.3 library allows attackers to cause a denial of service (memory consumption) via a
+        crafted HDF5 file.
+    - id: CVE-2018-17436
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17436
+      fix_releases:
+        - 2.0.0 (tool removed)
+      commit_hash: bb5661101a85984ce72835c167874f96279720f7
+      description: >-
+        ReadCode() in decompress.c in the HDF HDF5 through 1.10.3 library allows attackers to cause
+        a denial of service (invalid write access) via a crafted HDF5 file. This issue was triggered
+        while converting a GIF file to an HDF file.
+    - id: CVE-2018-17435
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17435
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.7
+      commit_hash: c12da4884f18dda4c9dbc23efd10eb053ec7cf0d
+      description: >-
+        A heap-based buffer over-read in H5O_attr_decode() in H5Oattr.c in the HDF HDF5 through
+        1.10.3 library allows attackers to cause a denial of service via a crafted HDF5 file. This
+        issue was triggered while converting an HDF file to GIF file.
+    - id: CVE-2018-17434
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17434
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.8
+      commit_hash: 9fb2c24c2eb2454430701247a984780654ca0544
+      description: >-
+        A SIGFPE signal is raised in the function apply_filters() of h5repack_filters.c in the HDF
+        HDF5 through 1.10.3 library during an attempted parse of a crafted HDF file, because of
+        incorrect protection against division by zero. It could allow a remote denial of service
+        attack.
+    - id: CVE-2018-17433
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17433
+      fix_releases:
+        - 2.0.0 (tool removed)
+      commit_hash: bb5661101a85984ce72835c167874f96279720f7
+      description: >-
+        A heap-based buffer overflow in ReadGifImageDesc() in gifread.c in the HDF HDF5 through
+        1.10.3 library allows attackers to cause a denial of service via a crafted HDF5 file. This
+        issue was triggered while converting a GIF file to an HDF file.
+    - id: CVE-2018-17432
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17432
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.8
+      commit_hash: fa40c6c59af5d9aabd4b478cd02f8a9f7ebf7922
+      description: >-
+        A NULL pointer dereference in H5O_sdspace_encode() in H5Osdspace.c in the HDF HDF5 through
+        1.10.3 library allows attackers to cause a denial of service via a crafted HDF5 file.
+    - id: CVE-2018-17237
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17237
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.5
+      commit_hash: 78af4c21cb717d400141d5ed15505e8257497ec9
+      description: >-
+        A SIGFPE signal is raised in the function H5D__chunk_set_info_real() of H5Dchunk.c in the
+        HDF HDF5 1.10.3 library during an attempted parse of a crafted HDF file, because of
+        incorrect protection against division by zero. This issue is different from CVE-2018-11207.
+    - id: CVE-2018-17234
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17234
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.5
+      commit_hash: b043126e5e502d198b222139677bc08c9915a12b
+      description: >-
+        Memory leak in the H5O__chunk_deserialize() function in H5Ocache.c in the HDF HDF5 through
+        1.10.3 library allows attackers to cause a denial of service (memory consumption) via a
+        crafted HDF5 file.
+    - id: CVE-2018-17233
+      url: https://www.cve.org/CVERecord?id=CVE-2018-17233
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.5
+      commit_hash: c132cb5565de02fd4e1e2cfe8ea7b89b21f785ac
+      description: >-
+        A SIGFPE signal is raised in the function H5D__create_chunk_file_map_hyper() of H5Dchunk.c
+        in the HDF HDF5 through 1.10.3 library during an attempted parse of a crafted HDF file,
+        because of incorrect protection against division by zero. It could allow a remote denial of
+        service attack.
+    - id: CVE-2018-16438
+      url: https://www.cve.org/CVERecord?id=CVE-2018-16438
+      fix_releases:
+        - 1.14.0
+      commit_hash: 34ec3bb7bc129f52bda4d82601f3bce65426459d
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is an out of bounds read in
+        H5L_extern_query at H5Lexternal.c.
+    - id: CVE-2018-15672
+      url: https://www.cve.org/CVERecord?id=CVE-2018-15672
+      fix_releases: null
+      status: not_applicable
+      commit_hash: null
+      description: >-
+        ** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2018-11207. Reason: This
+        candidate is a reservation duplicate of CVE-2018-11207.
+      notes:
+        - Fix release not applicable.
+        - Commit hash not applicable.
+    - id: CVE-2018-15671
+      url: https://www.cve.org/CVERecord?id=CVE-2018-15671
+      fix_releases:
+        - 1.14.3
+        - 1.12.3
+        - 1.10.11
+      commit_hash: e7bb05a8869f460afe9f198e9b7eee4a11972d48
+      description: >-
+        An issue was discovered in the HDF HDF5 1.10.2 library. Excessive stack consumption has been
+        detected in the function H5P__get_cb() in H5Pint.c during an attempted parse of a crafted
+        HDF file. This results in denial of service.
+    - id: CVE-2018-14460
+      url: https://www.cve.org/CVERecord?id=CVE-2018-14460
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.8
+      commit_hash: 9fb2c24c2eb2454430701247a984780654ca0544
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a heap-based buffer
+        over-read in the function H5O_sdspace_decode in H5Osdspace.c.
+    - id: CVE-2018-14035
+      url: https://www.cve.org/CVERecord?id=CVE-2018-14035
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.8
+      commit_hash: 9fb2c24c2eb2454430701247a984780654ca0544
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a heap-based buffer
+        over-read in the function H5VM_memcpyvv in H5VM.c.
+    - id: CVE-2018-14034
+      url: https://www.cve.org/CVERecord?id=CVE-2018-14034
+      fix_releases:
+        - <=1.10.3
+      commit_hash: null
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is an out of bounds read in
+        the function H5O_pline_reset in H5Opline.c.
+    - id: CVE-2018-14033
+      url: https://www.cve.org/CVERecord?id=CVE-2018-14033
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.9
+        - 1.8.23
+      commit_hash: dafc7285bb1df4a6529a64c215c5de4017016d24
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a heap-based buffer
+        over-read in the function H5O_layout_decode in H5Olayout.c, related to HDmemcpy.
+    - id: CVE-2018-14032
+      url: https://www.cve.org/CVERecord?id=CVE-2018-14032
+      fix_releases: null
+      status: not_applicable
+      commit_hash: null
+      description: >-
+        ** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. ConsultIDs: CVE-2018-11206. Reason: This
+        candidate is a reservation duplicate of CVE-2018-11206.
+      notes:
+        - Fix release not applicable.
+        - Commit hash not applicable.
+    - id: CVE-2018-14031
+      url: https://www.cve.org/CVERecord?id=CVE-2018-14031
+      fix_releases:
+        - 1.14.0
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 0f94940f1a9ae95de38b70709eb413511b76c73b
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a heap-based buffer
+        over-read in the function H5T_copy in H5T.c.
+    - id: CVE-2018-13876
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13876
+      fix_releases:
+        - <=1.10.3
+      commit_hash: null
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a stack-based buffer
+        overflow in the function H5FD_sec2_read in H5FDsec2.c, related to HDread.
+    - id: CVE-2018-13875
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13875
+      fix_releases:
+        - 1.14.0
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 0f94940f1a9ae95de38b70709eb413511b76c73b
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is an out-of-bounds read in
+        the function H5VM_memcpyvv in H5VM.c.
+    - id: CVE-2018-13874
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13874
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.3
+      commit_hash: null
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a stack-based buffer
+        overflow in the function H5FD_sec2_read in H5FDsec2.c, related to HDmemset.
+    - id: CVE-2018-13873
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13873
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.5
+      commit_hash: b043126e5e502d198b222139677bc08c9915a12b
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a buffer over-read in
+        H5O_chunk_deserialize in H5Ocache.c.
+    - id: CVE-2018-13872
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13872
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.3
+      commit_hash: null
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a heap-based buffer
+        overflow in the function H5G_ent_decode in H5Gent.c.
+    - id: CVE-2018-13871
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13871
+      fix_releases:
+        - 1.14.3
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 54f1c17bbe728b0fbef51bb6c6601746e51d2fbf
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a heap-based buffer
+        overflow in the function H5FL_blk_malloc in H5FL.c.
+    - id: CVE-2018-13870
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13870
+      fix_releases:
+        - 1.14.0
+      commit_hash: a45ade88863e7e413ec408cdc62d60a1c1bc76a2
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a heap-based buffer
+        over-read in the function H5O_link_decode in H5Olink.c.
+    - id: CVE-2018-13869
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13869
+      fix_releases:
+        - 1.14.0
+      commit_hash: a45ade88863e7e413ec408cdc62d60a1c1bc76a2
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a memcpy parameter overlap
+        in the function H5O_link_decode in H5Olink.c.
+    - id: CVE-2018-13868
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13868
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.3
+      commit_hash: null
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a heap-based buffer
+        over-read in the function H5O_fill_old_decode in H5Ofill.c.
+    - id: CVE-2018-13867
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13867
+      fix_releases:
+        - 1.14.3
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 86ddedf522aa8a72cfe03b9275ae16800d1fb5b9
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is an out of bounds read in
+        the function H5F__accum_read in H5Faccum.c.
+    - id: CVE-2018-13866
+      url: https://www.cve.org/CVERecord?id=CVE-2018-13866
+      fix_releases:
+        - 1.14.1
+        - 1.12.1
+        - 1.10.9
+      commit_hash: null
+      description: >-
+        An issue was discovered in the HDF HDF5 1.8.20 library. There is a stack-based buffer
+        over-read in the function H5F_addr_decode_len in H5Fint.c.
+    - id: CVE-2018-11207
+      url: https://www.cve.org/CVERecord?id=CVE-2018-11207
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.8
+      commit_hash: 9fb2c24c2eb2454430701247a984780654ca0544
+      description: >-
+        A division by zero was discovered in H5D__chunk_init in H5Dchunk.c in the HDF HDF5 1.10.2
+        library. It could allow a remote denial of service attack.
+    - id: CVE-2018-11206
+      url: https://www.cve.org/CVERecord?id=CVE-2018-11206
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.9
+        - 1.8.23
+      commit_hash: dafc7285bb1df4a6529a64c215c5de4017016d24
+      description: >-
+        An out of bounds read was discovered in H5O_fill_new_decode and H5O_fill_old_decode in
+        H5Ofill.c in the HDF HDF5 1.10.2 library. It could allow a remote denial of service or
+        information disclosure attack.
+    - id: CVE-2018-11205
+      url: https://www.cve.org/CVERecord?id=CVE-2018-11205
+      fix_releases:
+        - 1.14.1
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 46cedc2eb03ad7cd6e8404f5e6b526588436f946
+      description: >-
+        A out of bounds read was discovered in H5VM_memcpyvv in H5VM.c in the HDF HDF5 1.10.2
+        library. It could allow a remote denial of service or information disclosure attack.
+    - id: CVE-2018-11204
+      url: https://www.cve.org/CVERecord?id=CVE-2018-11204
+      fix_releases:
+        - 1.14.0
+        - 1.12.0
+        - 1.10.3
+      commit_hash: null
+      description: >-
+        A NULL pointer dereference was discovered in H5O__chunk_deserialize in H5Ocache.c in the HDF
+        HDF5 1.10.2 library. It could allow a remote denial of service attack.
+    - id: CVE-2018-11203
+      url: https://www.cve.org/CVERecord?id=CVE-2018-11203
+      fix_releases:
+        - 1.14.0
+        - 1.12.1
+        - 1.10.5
+      commit_hash: c132cb5565de02fd4e1e2cfe8ea7b89b21f785ac
+      description: >-
+        A division by zero was discovered in H5D__btree_decode_key in H5Dbtree.c in the HDF HDF5
+        1.10.2 library. It could allow a remote denial of service attack.
+    - id: CVE-2018-11202
+      url: https://www.cve.org/CVERecord?id=CVE-2018-11202
+      fix_releases:
+        - 1.14.3
+        - 1.12.3
+        - 1.10.11
+      commit_hash: 11e28fe8b84586eb6d99339f45ff3e502e2c5b60
+      description: >-
+        A NULL pointer dereference was discovered in H5S_hyper_make_spans in H5Shyper.c in the HDF
+        HDF5 1.10.2 library. It could allow a remote denial of service attack.
+    - id: CVE-2017-17509
+      url: https://www.cve.org/CVERecord?id=CVE-2017-17509
+      fix_releases:
+        - <=1.10.3
+      commit_hash: null
+      description: >-
+        In HDF5 1.10.1, there is an out of bounds write vulnerability in the function
+        H5G__ent_decode_vec in H5Gcache.c in libhdf5.a. For example, h5dump would crash or possibly
+        have unspecified other impact someone opens a crafted hdf5 file.
+    - id: CVE-2017-17508
+      url: https://www.cve.org/CVERecord?id=CVE-2017-17508
+      fix_releases:
+        - <=1.10.3
+      commit_hash: null
+      description: >-
+        In HDF5 1.10.1, there is a divide-by-zero vulnerability in the function H5T_set_loc in the
+        H5T.c file in libhdf5.a. For example, h5dump would crash when someone opens a crafted hdf5
+        file.
+    - id: CVE-2017-17507
+      url: https://www.cve.org/CVERecord?id=CVE-2017-17507
+      fix_releases:
+        - 1.14.4
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+        In HDF5 1.10.1, there is an out of bounds read vulnerability in the function
+        H5T_conv_struct_opt in H5Tconv.c in libhdf5.a. For example, h5dump would crash when someone
+        opens a crafted hdf5 file.
+    - id: CVE-2017-17506
+      url: https://www.cve.org/CVERecord?id=CVE-2017-17506
+      fix_releases:
+        - <=1.10.3
+      commit_hash: null
+      description: >-
+        In HDF5 1.10.1, there is an out of bounds read vulnerability in the function
+        H5Opline_pline_decode in H5Opline.c in libhdf5.a. For example, h5dump would crash when
+        someone opens a crafted hdf5 file.
+    - id: CVE-2017-17505
+      url: https://www.cve.org/CVERecord?id=CVE-2017-17505
+      fix_releases:
+        - <=1.10.3
+      commit_hash: null
+      description: >-
+        In HDF5 1.10.1, there is a NULL pointer dereference in the function H5O_pline_decode in the
+        H5Opline.c file in libhdf5.a. For example, h5dump would crash when someone opens a crafted
+        hdf5 file.
+    - id: CVE-2016-4333
+      url: https://www.cve.org/CVERecord?id=CVE-2016-4333
+      fix_releases:
+        - <=1.10.3
+      commit_hash: null
+      description: >-
+        The HDF5 1.8.16 library allocating space for the array using a value from the file has an
+        impact within the loop for initializing said array allowing a value within the file to
+        modify the loop's terminator. Due to this, an aggressor can cause the loop's index to point
+        outside the bounds of the array when initializing it.
+    - id: CVE-2016-4332
+      url: https://www.cve.org/CVERecord?id=CVE-2016-4332
+      fix_releases:
+        - 1.14.3
+        - 1.12.3
+        - 1.10.11
+      commit_hash: a7c095d5befd0ab290aaa42a3195c4a386ebfa1d
+      description: >-
+        The library's failure to check if certain message types support a particular flag, the HDF5
+        1.8.16 library will cast the structure to an alternative structure and then assign to fields
+        that aren't supported by the message type and the library will write outside the bounds of
+        the heap buffer. This can lead to code execution under the context of the library.
+    - id: CVE-2016-4331
+      url: https://www.cve.org/CVERecord?id=CVE-2016-4331
+      fix_releases:
+        - <=1.10.3
+      commit_hash: null
+      description: >-
+        When decoding data out of a dataset encoded with the H5Z_NBIT decoding, the HDF5 1.8.16
+        library will fail to ensure that the precision is within the bounds of the size leading to
+        arbitrary code execution.
+    - id: CVE-2016-4330
+      url: https://www.cve.org/CVERecord?id=CVE-2016-4330
+      fix_releases:
+        - <=1.10.3
+      commit_hash: null
+      description: >-
+        In the HDF5 1.8.16 library's failure to check if the number of dimensions for an array read
+        from the file is within the bounds of the space allocated for it, a heap-based buffer
+        overflow will occur, potentially leading to arbitrary code execution.
