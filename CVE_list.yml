@@ -147,8 +147,8 @@
     - id: CVE-2025-44904
       url: https://www.cve.org/CVERecord?id=CVE-2025-44904
       fix_releases:
-        - Outstanding
-      commit_hash: Outstanding
+        - Not yet fixed
+      commit_hash: N/A
       commit_url: null
       description: >-
         hdf5 v1.14.6 was discovered to contain a heap buffer overflow via the H5VM_memcpyvv function.
