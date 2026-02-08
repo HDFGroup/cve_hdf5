@@ -17,8 +17,11 @@ Review the list of CVEs in the [CVE_list.md](CVE_list.md) file. This file contai
 ⚠️ **Note:** Do not modify the generated `CVE_list.md` file directly! Instead, use the provided script to regenerate it from the YAML files.
 
 ```bash
-./yaml2md.py [<path to the CVE yaml file>] [<output markdown file>]
+./yaml2md.py [<path to the CVE yaml file>] [-o <output markdown file>]
+./yaml2md.py --validate-only [<path to the CVE yaml file>]
+./yaml2md.py --validate-only --check-links [<path to the CVE yaml file>]
 ```
+`--check-links` performs a network reachability check for each CVE URL during validation.
 
 ## Acknowledgment
 

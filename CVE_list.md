@@ -1,7 +1,7 @@
 HDF5-related CVE issues from [cve.org](https://www.cve.org/CVERecord/SearchResults?query=hdf5)
 
 
-👉 **Commit Hash** links to the commit in the HDF5 GitHub repository.
+**Commit Hash** links to the commit in the HDF5 GitHub repository.
 
 | CVE ID | Fixed in HDF5 vX.Y.Z | Commit Hash | Description
 |---------|--------|-------------|-------------|
