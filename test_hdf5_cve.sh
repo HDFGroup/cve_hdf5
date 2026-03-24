@@ -75,6 +75,7 @@ H5FORMAT_CONVERT=$bindir/h5format_convert
 H5LS=$bindir/h5ls
 H52GIF=$bindir/h52gif
 H5REPACK=$bindir/h5repack
+H5DIFF=$bindir/h5diff
 H5STAT=$bindir/h5stat
 
 ##
@@ -180,7 +181,8 @@ cve-2024-29165.h5
 cve-2024-29166.h5
 cve-2024-32605.h5
 cve-2024-32606.h5
-cve-2024-32607.h5
+cve-2024-32607-1.h5
+cve-2024-32607-2.h5
 cve-2024-32608.h5
 cve-2024-32609.h5
 cve-2024-32610.h5
@@ -235,6 +237,7 @@ cve-2025-6858.h5
 cve-2025-7067.h5
 cve-2025-7068.h5
 cve-2025-7069.h5
+unknown-1.h5
 "
 
 GIF2H5_TEST_FILES="
@@ -318,6 +321,50 @@ TEST_TOOL_2FILES() {
 
     # Clean up generated output files
     rm -f $outfile
+}
+
+# Version of TEST_TOOL_2FILES for h5diff - accepts 2 as a valid return code and
+# doesn't delete anything
+RUN_TEST_H5DIFF() {
+
+    file1=$1
+    file2=$2
+    base1=$(basename "$file1" .exp)
+    base2=$(basename "$file2" .exp)
+    toolbase=$(basename "$tool")
+    shift
+    shift
+    shift
+    echo -ne "$base1 $base2\t"
+
+    # Store actual output in a file for inspection and reducing clutter on screen
+    resultfile="$toolbase-$base1.out"
+
+    # Run test, redirecting stderr and stdout to the output file
+    (
+        # Run using timeout to detect infinite loops.
+        # Timeout returns 124 when the timeout has been exceeded.
+        timeout 10 $H5DIFF "$@" "$file1" "$file2"
+
+        RET=$?
+
+        # An abort (exit code 134) will cause bash to emit a bunch of noise.
+        # Instead, we change the exit code to something the command line
+        # tools don't use.
+        # Switch return code 2 (failure) to 1 so CHECK_RET doesn't get confused.
+        if [[ $RET == 134 ]] ; then
+            exit 57
+        elif [[ $RET == 2 ]] ; then
+            exit 1
+        else
+            exit $RET
+        fi
+
+    ) > "$outdir/$resultfile" 2>&1
+
+    RET=$?
+
+    CHECK_RET "$RET"
 }
 
 # Run user-provided tool on a given CVE file and report PASSED or FAILED
@@ -439,6 +486,15 @@ TEST_H5REPACK() {
     TEST_TOOL_2FILES "$H5REPACK" "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile" -f GZIP=8 -l dset1:CHUNK=5x6
 }
 
+# Test h5diff with options on affected CVE file
+TEST_H5DIFF() {
+    echo ""
+    echo " === h5diff on affected files ==="
+    testfile1="cve-2024-32607-1.h5"
+    testfile2="cve-2024-32607-2.h5"
+    RUN_TEST_H5DIFF "$CVE_H5_FILES_DIR/$testfile1" "$CVE_H5_FILES_DIR/$testfile2"
+}
+
 # Test h5stat with options on affected CVE file
 TEST_H5STAT() {
     echo ""
@@ -520,6 +576,7 @@ echo "========================================"
 
 TEST_H5DUMP
 TEST_H5REPACK
+TEST_H5DIFF
 TEST_H5STAT
 TEST_H52GIF
 TEST_GIF2H5
