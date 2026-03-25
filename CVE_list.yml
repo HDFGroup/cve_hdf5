@@ -2,6 +2,15 @@
 - title: HDF5-related CVE issues from cve.org
   url: https://www.cve.org/CVERecord/SearchResults?query=hdf5
   issues:
+    - id: CVE-2025-26200
+      url: https://www.cve.org/CVERecord?id=CVE-2025-26200
+      fix_releases:
+        - 2.0.0
+      commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
+      commit_url: https://github.com/HDFGroup/hdf5/commit/136739b37a9e1ecefe83883f0f422d283ae497e5
+      description: >-
+         Prior to version 1.14.4-2, an attacker who can control an `h5` file parsed by HDF5 can
+         trigger a write-based heap buffer overflow condition in the H5T__conv_struct_op function.
     - id: CVE-2025-7069
       url: https://www.cve.org/CVERecord?id=CVE-2025-7069
       fix_releases:
