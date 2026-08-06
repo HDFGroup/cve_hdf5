@@ -11,6 +11,22 @@
       description: >-
          Prior to version 1.14.4-2, an attacker who can control an `h5` file parsed by HDF5 can
          trigger a write-based heap buffer overflow condition in the H5T__conv_struct_op function.
+    - id: CVE-2026-19028
+      url: https://www.cve.org/CVERecord?id=CVE-2026-19028
+      fix_releases:
+        - pending (PR #6497)
+      commit_hash: N/A
+      commit_url: null
+      notes: >-
+        Fix is not yet merged; update fix_releases, commit_hash and commit_url when
+        PR #6497 lands on develop.
+      description: >-
+        H5Z__filter_fletcher32 in H5Zfletcher32.c in HDF5 through 2.3.0 computes the data length to
+        checksum by subtracting the 4-byte trailing checksum size from the input buffer size without
+        checking that the buffer is at least 4 bytes, allowing a size_t underflow. This allows attackers
+        to cause a denial of service (massively out-of-bounds read and application crash in
+        H5_checksum_fletcher32) via a crafted HDF5 file with a Fletcher32-filtered chunk smaller than 4
+        bytes, triggered via H5Dread, e.g. by the h5ls or h5dump tools.
     - id: CVE-2026-19027
       url: https://www.cve.org/CVERecord?id=CVE-2026-19027
       fix_releases:

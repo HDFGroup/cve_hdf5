@@ -3,6 +3,7 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 | CVE\_Issue\_Number | Tested? | File Source | Tool/API | Issue           |
 |--------------------|---------|-------------|----------|-----------------|
 |[CVE-2026-26200](https://www.cve.org/CVERecord?id=CVE-2026-26200)|Y|[cve-2026-26200.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2026-26200.h5)| h5dump <file.h5> | heap buffer overflow in H5T__conv_struct_op |
+|[CVE-2026-19028](https://www.cve.org/CVERecord?id=CVE-2026-19028)|Y|[cve-2026-19028.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2026-19028.h5)| h5dump &lt;file.h5&gt; | integer underflow leading to out-of-bounds read in H5_checksum_fletcher32 |
 |[CVE-2026-19027](https://www.cve.org/CVERecord?id=CVE-2026-19027)|Y|[cve-2026-19027.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2026-19027.h5)| h5ls -d &lt;file.h5&gt; | heap buffer overflow in H5Z__nbit_decompress |
 |[CVE-2026-19026](https://www.cve.org/CVERecord?id=CVE-2026-19026)|Y|[cve-2026-19026.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2026-19026.h5)| h5ls -d &lt;file.h5&gt; | null pointer dereference in H5Z__filter_nbit |
 |[CVE-2026-19025](https://www.cve.org/CVERecord?id=CVE-2026-19025)|Y|[cve-2026-19025.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2026-19025.h5)| h5repack -l CONTI &lt;file1.h5&gt; &lt;file2.h5&gt; | divide by zero in H5S__hyper_iter_get_seq_list |

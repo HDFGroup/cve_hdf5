@@ -242,6 +242,7 @@ cve-2026-19024.h5
 cve-2026-19025.h5
 cve-2026-19026.h5
 cve-2026-19027.h5
+cve-2026-19028.h5
 cve-2026-26200.h5
 unknown-1.h5
 "
@@ -498,6 +499,8 @@ TEST_H5LS() {
     testfile="cve-2026-19026.h5"
     TEST_TOOL "$H5LS" "$CVE_H5_FILES_DIR/$testfile" -d
     testfile="cve-2026-19027.h5"
+    TEST_TOOL "$H5LS" "$CVE_H5_FILES_DIR/$testfile" -d
+    testfile="cve-2026-19028.h5"
     TEST_TOOL "$H5LS" "$CVE_H5_FILES_DIR/$testfile" -d
 }
 
