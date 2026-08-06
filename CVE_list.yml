@@ -83,11 +83,9 @@
       commit_url: null
       notes: >-
         Fix is not yet merged; update fix_releases, commit_hash and commit_url when
-        PR #6507 lands on develop.  The published record says "before 2.1.1", but the
-        defect is present in 2.2.0 and on develop; the description here is reproduced
-        verbatim and should be refreshed if the record is corrected.
+        PR #6507 lands on develop.
       description: >-
-        NULL pointer dereference in H5Pget_fill_value in HDF5 before 2.1.1 allows attackers to cause a
+        NULL pointer dereference in H5Pget_fill_value in HDF5 before 2.3.0 allows attackers to cause a
         denial of service via a dataset whose version 1 or 2 fill value message has the "defined" flag set
         together with a negative size field, which is not normalized to the library's "undefined" sentinel
         and reaches H5T_path_find with a NULL datatype.
@@ -99,12 +97,10 @@
       commit_url: null
       notes: >-
         Fix is not yet merged; update fix_releases, commit_hash and commit_url when
-        PR #6507 lands on develop.  The published record says "before 2.1.1", but the
-        defect is present in 2.2.0 and on develop; the description here is reproduced
-        verbatim and should be refreshed if the record is corrected.
+        PR #6507 lands on develop.
       description: >-
         Untrusted pointer dereference in the render_bin_output function in the h5dump tool in HDF5 before
-        2.1.1 allows attackers to cause a denial of service via a variable-length string dataset with more
+        2.3.0 allows attackers to cause a denial of service via a variable-length string dataset with more
         than one element dumped in binary mode, which corrupts the per-element stride calculation and
         causes subsequent elements to be read from a misaligned offset and dereferenced as a pointer.
     - id: CVE-2025-7069
