@@ -11,6 +11,21 @@
       description: >-
          Prior to version 1.14.4-2, an attacker who can control an `h5` file parsed by HDF5 can
          trigger a write-based heap buffer overflow condition in the H5T__conv_struct_op function.
+    - id: CVE-2026-19026
+      url: https://www.cve.org/CVERecord?id=CVE-2026-19026
+      fix_releases:
+        - pending (PR #6497)
+      commit_hash: N/A
+      commit_url: null
+      notes: >-
+        Fix is not yet merged; update fix_releases, commit_hash and commit_url when
+        PR #6497 lands on develop.
+      description: >-
+        H5Z__filter_nbit in H5Znbit.c in HDF5 through 2.3.0 dereferences cd_values[0] through cd_values[4]
+        without validating that cd_values is non-NULL or that cd_nelmts is at least 5, the fixed size of
+        the filter's header. This allows attackers to cause a denial of service via a crafted HDF5 file
+        that stores the N-Bit filter pipeline message with zero client-data values, opened and read via
+        H5Dread, e.g. by the h5ls or h5repack tools.
     - id: CVE-2026-19025
       url: https://www.cve.org/CVERecord?id=CVE-2026-19025
       fix_releases:

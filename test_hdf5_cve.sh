@@ -240,6 +240,7 @@ cve-2025-7069.h5
 cve-2026-19023.h5
 cve-2026-19024.h5
 cve-2026-19025.h5
+cve-2026-19026.h5
 cve-2026-26200.h5
 unknown-1.h5
 "
@@ -488,6 +489,15 @@ TEST_H5DUMP() {
     TEST_TOOL "$H5DUMP" "$CVE_H5_FILES_DIR/$testfile" -x
 }
 
+# Test h5ls with options on affected CVE files
+TEST_H5LS() {
+    echo ""
+    echo " === h5ls on affected files ==="
+    # h5ls only reads dataset data with -d, which is what runs the filters
+    testfile="cve-2026-19026.h5"
+    TEST_TOOL "$H5LS" "$CVE_H5_FILES_DIR/$testfile" -d
+}
+
 # Test h5repack with options on affected CVE file
 TEST_H5REPACK() {
     echo ""
@@ -588,6 +598,7 @@ echo "Test tools on specific files and options"
 echo "========================================"
 
 TEST_H5DUMP
+TEST_H5LS
 TEST_H5REPACK
 TEST_H5DIFF
 TEST_H5STAT
