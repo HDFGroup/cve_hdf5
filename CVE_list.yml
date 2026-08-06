@@ -2,8 +2,8 @@
 - title: HDF5-related CVE issues from cve.org
   url: https://www.cve.org/CVERecord/SearchResults?query=hdf5
   issues:
-    - id: CVE-2025-26200
-      url: https://www.cve.org/CVERecord?id=CVE-2025-26200
+    - id: CVE-2026-26200
+      url: https://www.cve.org/CVERecord?id=CVE-2026-26200
       fix_releases:
         - 2.0.0
       commit_hash: 136739b37a9e1ecefe83883f0f422d283ae497e5
@@ -11,6 +11,98 @@
       description: >-
          Prior to version 1.14.4-2, an attacker who can control an `h5` file parsed by HDF5 can
          trigger a write-based heap buffer overflow condition in the H5T__conv_struct_op function.
+    - id: CVE-2026-19028
+      url: https://www.cve.org/CVERecord?id=CVE-2026-19028
+      fix_releases:
+        - pending (PR #6497)
+      commit_hash: N/A
+      commit_url: null
+      notes: >-
+        Fix is not yet merged; update fix_releases, commit_hash and commit_url when
+        PR #6497 lands on develop.
+      description: >-
+        H5Z__filter_fletcher32 in H5Zfletcher32.c in HDF5 through 2.3.0 computes the data length to
+        checksum by subtracting the 4-byte trailing checksum size from the input buffer size without
+        checking that the buffer is at least 4 bytes, allowing a size_t underflow. This allows attackers
+        to cause a denial of service (massively out-of-bounds read and application crash in
+        H5_checksum_fletcher32) via a crafted HDF5 file with a Fletcher32-filtered chunk smaller than 4
+        bytes, triggered via H5Dread, e.g. by the h5ls or h5dump tools.
+    - id: CVE-2026-19027
+      url: https://www.cve.org/CVERecord?id=CVE-2026-19027
+      fix_releases:
+        - pending (PR #6497)
+      commit_hash: N/A
+      commit_url: null
+      notes: >-
+        Fix is not yet merged; update fix_releases, commit_hash and commit_url when
+        PR #6497 lands on develop.
+      description: >-
+        The H5Z__nbit_decompress_one_byte, H5Z__nbit_decompress_one_nooptype, and
+        H5Z__nbit_decompress_one_atomic functions in H5Znbit.c in HDF5 through 2.3.0 advance a read index
+        into the compressed chunk buffer without bounding it against the buffer's actual size. This allows
+        attackers to cause an out-of-bounds heap read, and in constrained cases disclosure of adjacent
+        heap memory into decompressed dataset values, via a crafted HDF5 file whose N-Bit filter
+        parameters describe more decompressed data than the stored compressed chunk actually contains,
+        triggered via H5Dread, e.g. by the h5ls or h5repack tools.
+    - id: CVE-2026-19026
+      url: https://www.cve.org/CVERecord?id=CVE-2026-19026
+      fix_releases:
+        - pending (PR #6497)
+      commit_hash: N/A
+      commit_url: null
+      notes: >-
+        Fix is not yet merged; update fix_releases, commit_hash and commit_url when
+        PR #6497 lands on develop.
+      description: >-
+        H5Z__filter_nbit in H5Znbit.c in HDF5 through 2.3.0 dereferences cd_values[0] through cd_values[4]
+        without validating that cd_values is non-NULL or that cd_nelmts is at least 5, the fixed size of
+        the filter's header. This allows attackers to cause a denial of service via a crafted HDF5 file
+        that stores the N-Bit filter pipeline message with zero client-data values, opened and read via
+        H5Dread, e.g. by the h5ls or h5repack tools.
+    - id: CVE-2026-19025
+      url: https://www.cve.org/CVERecord?id=CVE-2026-19025
+      fix_releases:
+        - pending (PR #6508)
+      commit_hash: N/A
+      commit_url: null
+      notes: >-
+        Fix is not yet merged; update fix_releases, commit_hash and commit_url when
+        PR #6508 lands on develop.
+      description: >-
+        H5O__layout_decode in H5Olayout.c in HDF5 through 2.3.0 does not validate that a chunked dataset's
+        stored chunk-layout dimensionality matches its dataspace rank when an existing dataset is opened,
+        whereas this check is performed only at dataset-creation time. This allows attackers to cause a
+        denial of service (divide-by-zero and application crash in H5S__hyper_iter_get_seq_list in
+        src/H5Shyper.c) via a crafted HDF5 file with mismatched chunk/dataspace ranks that is opened and
+        read via H5Dopen2 and H5Dread, e.g. by the h5repack tool.
+    - id: CVE-2026-19024
+      url: https://www.cve.org/CVERecord?id=CVE-2026-19024
+      fix_releases:
+        - pending (PR #6507)
+      commit_hash: N/A
+      commit_url: null
+      notes: >-
+        Fix is not yet merged; update fix_releases, commit_hash and commit_url when
+        PR #6507 lands on develop.
+      description: >-
+        NULL pointer dereference in H5Pget_fill_value in HDF5 before 2.3.0 allows attackers to cause a
+        denial of service via a dataset whose version 1 or 2 fill value message has the "defined" flag set
+        together with a negative size field, which is not normalized to the library's "undefined" sentinel
+        and reaches H5T_path_find with a NULL datatype.
+    - id: CVE-2026-19023
+      url: https://www.cve.org/CVERecord?id=CVE-2026-19023
+      fix_releases:
+        - pending (PR #6507)
+      commit_hash: N/A
+      commit_url: null
+      notes: >-
+        Fix is not yet merged; update fix_releases, commit_hash and commit_url when
+        PR #6507 lands on develop.
+      description: >-
+        Untrusted pointer dereference in the render_bin_output function in the h5dump tool in HDF5 before
+        2.3.0 allows attackers to cause a denial of service via a variable-length string dataset with more
+        than one element dumped in binary mode, which corrupts the per-element stride calculation and
+        causes subsequent elements to be read from a misaligned offset and dereferenced as a pointer.
     - id: CVE-2025-7069
       url: https://www.cve.org/CVERecord?id=CVE-2025-7069
       fix_releases:
