@@ -3,6 +3,7 @@ CVE issues from [mitre.org](https://cve.mitre.org/cgi-bin/cvekey.cgi?keyword=HDF
 | CVE\_Issue\_Number | Tested? | File Source | Tool/API | Issue           |
 |--------------------|---------|-------------|----------|-----------------|
 |[CVE-2026-26200](https://www.cve.org/CVERecord?id=CVE-2026-26200)|Y|[cve-2026-26200.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2026-26200.h5)| h5dump <file.h5> | heap buffer overflow in H5T__conv_struct_op |
+|[CVE-2026-19023](https://www.cve.org/CVERecord?id=CVE-2026-19023)|Y|[cve-2026-19023.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2026-19023.h5)| h5dump -b NATIVE -o &lt;outfile&gt; &lt;file.h5&gt; | untrusted pointer dereference in render_bin_output |
 |[CVE-2025-7069](https://www.cve.org/CVERecord?id=CVE-2025-7069)|Y|[cve-2025-7069.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2025-7069.h5)| h5dump <file.h5>, external fuzzer | heap buffer overflow in H5FS__sect_link_size |
 |[CVE-2025-7068](https://www.cve.org/CVERecord?id=CVE-2025-7068)|Y|[cve-2025-7068.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2025-7068.h5)| h5dump <file.h5>, external fuzzer | memory leak in H5FL__malloc |
 |[CVE-2025-7067](https://www.cve.org/CVERecord?id=CVE-2025-7067)|Y|[cve-2025-7067.h5](https://github.com/HDFGroup/cve_hdf5/blob/main/cvefiles/cve-2025-7067.h5)| h5dump <file.h5>, external fuzzer | heap buffer overflow in H5FS__sinfo_serialize_node_cb |
