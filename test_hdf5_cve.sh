@@ -238,6 +238,7 @@ cve-2025-7067.h5
 cve-2025-7068.h5
 cve-2025-7069.h5
 cve-2026-19023.h5
+cve-2026-19024.h5
 cve-2026-26200.h5
 unknown-1.h5
 "
@@ -481,6 +482,9 @@ TEST_H5DUMP() {
     # Binary output of a vlen string dataset; plain h5dump does not reach the bug
     testfile="cve-2026-19023.h5"
     TEST_TOOL "$H5DUMP" "$CVE_H5_FILES_DIR/$testfile" -b NATIVE -o "$outdir/cve-2026-19023.bin"
+    # XML output reads the fill value; plain h5dump does not reach the bug
+    testfile="cve-2026-19024.h5"
+    TEST_TOOL "$H5DUMP" "$CVE_H5_FILES_DIR/$testfile" -x
 }
 
 # Test h5repack with options on affected CVE file

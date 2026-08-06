@@ -11,6 +11,22 @@
       description: >-
          Prior to version 1.14.4-2, an attacker who can control an `h5` file parsed by HDF5 can
          trigger a write-based heap buffer overflow condition in the H5T__conv_struct_op function.
+    - id: CVE-2026-19024
+      url: https://www.cve.org/CVERecord?id=CVE-2026-19024
+      fix_releases:
+        - pending (PR #6507)
+      commit_hash: N/A
+      commit_url: null
+      notes: >-
+        Fix is not yet merged; update fix_releases, commit_hash and commit_url when
+        PR #6507 lands on develop.  The published record says "before 2.1.1", but the
+        defect is present in 2.2.0 and on develop; the description here is reproduced
+        verbatim and should be refreshed if the record is corrected.
+      description: >-
+        NULL pointer dereference in H5Pget_fill_value in HDF5 before 2.1.1 allows attackers to cause a
+        denial of service via a dataset whose version 1 or 2 fill value message has the "defined" flag set
+        together with a negative size field, which is not normalized to the library's "undefined" sentinel
+        and reaches H5T_path_find with a NULL datatype.
     - id: CVE-2026-19023
       url: https://www.cve.org/CVERecord?id=CVE-2026-19023
       fix_releases:
