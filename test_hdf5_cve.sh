@@ -239,6 +239,7 @@ cve-2025-7068.h5
 cve-2025-7069.h5
 cve-2026-19023.h5
 cve-2026-19024.h5
+cve-2026-19025.h5
 cve-2026-26200.h5
 unknown-1.h5
 "
@@ -493,6 +494,9 @@ TEST_H5REPACK() {
     echo " === h5repack on affected files ==="
     testfile="cve-2018-17434.h5"
     TEST_TOOL_2FILES "$H5REPACK" "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile" -f GZIP=8 -l dset1:CHUNK=5x6
+    # Repacking to a contiguous layout drives the chunk I/O that divides by zero
+    testfile="cve-2026-19025.h5"
+    TEST_TOOL_2FILES "$H5REPACK" "$CVE_H5_FILES_DIR/$testfile" "$CVE_H5_FILES_DIR/repacked_$testfile" -l CONTI
 }
 
 # Test h5diff with options on affected CVE file
